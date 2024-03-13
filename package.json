@@ -1,0 +1,7 @@
+{
+  "name": "@tiagoporto/config",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
