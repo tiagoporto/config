@@ -1,10 +1,10 @@
 {
   "name": "@tiagoporto/prettier-config",
-  "version": "1.0.0-alpha.0",
-  "main": "pretier.config.mjs",
+  "version": "1.0.0-alpha.2",
+  "main": "index.json",
   "license": "MIT",
   "files": [
-    "prettier.config.mjs"
+    "index.json"
   ],
   "repository": {
     "url": "https://github.com/tiagoporto/config.git",
