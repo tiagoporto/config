@@ -6,10 +6,13 @@
   ],
   "scripts": {
     "check-formatting": "prettier --check --ignore-unknown \"**/*\"",
-    "check-formatting:fix": "npm run check-formatting -- --write"
+    "check-formatting:fix": "npm run check-formatting -- --write",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@tiagoporto/prettier-config": "^1.0.0-alpha.2",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5"
   }
 }
