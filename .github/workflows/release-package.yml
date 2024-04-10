@@ -14,7 +14,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
         with:
-          node-version-file: ".nvmrc"
+          node-version-file: '.nvmrc'
           registry-url: https://registry.npmjs.org/
       - run: npm publish --access=public --workspaces --tag=alpha
         env:
