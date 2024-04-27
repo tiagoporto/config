@@ -1,15 +1,15 @@
 # @tiagoporto/prettier-config
 
-> [Prettier](https://prettier.io/) Shareable Config
+> Shareable Config for [Prettier](https://prettier.io)
 
-`@tiagoporto/prettier-config` work integrate with the code formatting [Prettier](https://prettier.io/).
+`@tiagoporto/prettier-config` work integrate with the code formatting [Prettier](https://prettier.io).
 
 ```bash
 npm install --save-dev prettier @tiagoporto/eslint-config
 ```
 
 ```json
-// `.prettierrc.json`
+// .prettierrc.json
 "@tiagoporto/prettier-config"
 ```
 
@@ -24,8 +24,8 @@ In `package.json` add the following scripts:
 }
 ```
 
-# Editor
+## Editor
 
-For [VSCode](https://code.visualstudio.com/) is recommended the following extensions:
+For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
 
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
