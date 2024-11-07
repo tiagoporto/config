@@ -1,6 +1,6 @@
 {
   "name": "@tiagoporto/remark-config",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "type": "module",
   "main": "index.js",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "url": "https://github.com/tiagoporto/config.git",
     "directory": "packages/remark-config"
   },
-  "devDependencies": {
+  "dependencies": {
     "remark-emoji": "^4.0.1",
     "remark-gfm": "^4.0.0",
     "remark-lint-no-dead-urls": "^1.1.0",
