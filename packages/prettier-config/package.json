@@ -1,14 +1,18 @@
 {
   "name": "@tiagoporto/prettier-config",
-  "version": "1.0.0-alpha.2",
+  "version": "0.0.0-development",
   "main": "index.json",
   "license": "MIT",
   "files": [
     "index.json"
   ],
   "repository": {
-    "url": "https://github.com/tiagoporto/config.git",
+    "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/prettier-config"
+  },
+  "scripts": {
+    "release": "npx semantic-release",
+    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
   },
   "peerDependencies": {
     "prettier": ">= 3"

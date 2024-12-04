@@ -1,6 +1,6 @@
 {
   "name": "@tiagoporto/remark-config",
-  "version": "1.0.0-alpha.1",
+  "version": "0.0.0-development",
   "type": "module",
   "main": "index.js",
   "license": "MIT",
@@ -8,8 +8,12 @@
     "index.js"
   ],
   "repository": {
-    "url": "https://github.com/tiagoporto/config.git",
+    "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/remark-config"
+  },
+  "scripts": {
+    "release": "npx semantic-release",
+    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
   },
   "dependencies": {
     "remark-emoji": "^4.0.1",
