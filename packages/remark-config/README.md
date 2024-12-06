@@ -5,7 +5,7 @@
 `@tiagoporto/remark-config` works integrate with [remark](https://github.com/remarkjs/remark).
 
 ```bash
-npm install --save-dev remark remark-cli @tiagoporto/remark-config
+npm install --save-dev remark remark-cli prettier @tiagoporto/remark-config
 ```
 
 ```json
@@ -39,4 +39,13 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
     "editor.formatOnSave": true
   }
 }
+```
+
+## Prettier
+
+To avoid conflict with prettier
+
+```sh
+# .prettierignore
+**/*.md
 ```
