@@ -9,7 +9,7 @@ npm install --save-dev prettier @tiagoporto/prettier-config
 ```
 
 ```json
-// .prettierrc.json
+// .prettierrc
 "@tiagoporto/prettier-config"
 ```
 
