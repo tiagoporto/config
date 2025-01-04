@@ -49,3 +49,14 @@ To avoid conflict with prettier
 # .prettierignore
 **/*.md
 ```
+
+## Lint-staged
+
+Check staged markdown
+
+```mjs
+# .lintstagedrc.mjs
+export default {
+  '*.md': 'remark --frail',
+}
+```
