@@ -24,6 +24,17 @@ In `package.json` add the following scripts:
 }
 ```
 
+## Lint-staged
+
+Check staged files formatting
+
+```mjs
+# .lintstagedrc.mjs
+export default {
+  '*': 'prettier --check --ignore-unknown --write',
+}
+```
+
 ## Editor
 
 For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
