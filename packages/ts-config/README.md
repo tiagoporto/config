@@ -15,7 +15,7 @@ In `package.json` add the following scripts:
 Check TypeScript files
 
 ```mjs
-# .lintstagedrc.mjs
+// .lintstagedrc.mjs
 export default {
   '*.{ts,tsx}': () => 'tsc',
 }

@@ -29,7 +29,7 @@ In `package.json` add the following scripts:
 Check staged files formatting
 
 ```mjs
-# .lintstagedrc.mjs
+// .lintstagedrc.mjs
 export default {
   '*': 'prettier --check --ignore-unknown --write',
 }

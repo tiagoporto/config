@@ -39,7 +39,7 @@ To avoid conflict with prettier
 Check staged markdown
 
 ```mjs
-# .lintstagedrc.mjs
+// .lintstagedrc.mjs
 export default {
   '*.md': 'remark --frail',
 }
