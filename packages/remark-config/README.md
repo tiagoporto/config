@@ -25,22 +25,6 @@ In `package.json` add the following scripts:
 }
 ```
 
-## Editor
-
-For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
-
-- [remark](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-remark)
-
-```json
-// .vscode/settings.json
-{
-  "[markdown]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-remark",
-    "editor.formatOnSave": true
-  }
-}
-```
-
 ## Prettier
 
 To avoid conflict with prettier
@@ -58,5 +42,21 @@ Check staged markdown
 # .lintstagedrc.mjs
 export default {
   '*.md': 'remark --frail',
+}
+```
+
+## Editor
+
+For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
+
+- [remark](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-remark)
+
+```json
+// .vscode/settings.json
+{
+  "[markdown]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-remark",
+    "editor.formatOnSave": true
+  }
 }
 ```
