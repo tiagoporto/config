@@ -20,3 +20,14 @@ export default {
   '*.{ts,tsx}': () => 'tsc',
 }
 ```
+
+## Editor
+
+Set the TypeScript SDK to workspace
+
+```json
+// .vscode/settings.json
+{
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
+```
