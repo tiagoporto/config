@@ -16,7 +16,7 @@
     "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
   },
   "dependencies": {
-    "remark-emoji": "^4.0.1",
+    "remark-emoji": "^5.0.1",
     "remark-gfm": "^4.0.0",
     "remark-lint-no-dead-urls": "^1.1.0",
     "remark-lint-no-url-trailing-slash": "^3.0.1",
