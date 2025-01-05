@@ -7,9 +7,10 @@
       2,
       "always",
       [
-        "wip",
+        "dependabot-config",
         "prettier-config",
-        "remark-config"
+        "remark-config",
+        "wip"
       ]
     ]
   }
