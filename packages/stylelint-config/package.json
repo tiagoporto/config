@@ -9,7 +9,7 @@
     "node": ">=18"
   },
   "type": "module",
-  "exports": "stylelint.config.mjs",
+  "exports": "./stylelint.config.mjs",
   "license": "MIT",
   "files": [
     "stylelint.config.mjs"
