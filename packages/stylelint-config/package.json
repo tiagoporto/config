@@ -1,0 +1,30 @@
+{
+  "name": "@tiagoporto/stylelint-config",
+  "version": "0.0.0-development",
+  "repository": {
+    "url": "git+https://github.com/tiagoporto/config.git",
+    "directory": "packages/stylelint-config"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "exports": "stylelint.config.mjs",
+  "license": "MIT",
+  "files": [
+    "stylelint.config.mjs"
+  ],
+  "scripts": {
+    "release": "npx semantic-release",
+    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
+  },
+  "dependencies": {
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-no-unsupported-browser-features": "^8.0.2"
+  },
+  "peerDependencies": {
+    "sass-embedded": "^1.83.1",
+    "stylelint": "^16.12.0"
+  }
+}

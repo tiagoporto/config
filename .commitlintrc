@@ -10,6 +10,7 @@
         "dependabot-config",
         "prettier-config",
         "remark-config",
+        "stylelint-config",
         "ts-config",
         "wip"
       ]
