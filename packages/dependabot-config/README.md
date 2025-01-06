@@ -1,6 +1,6 @@
-# @tiagoporto/remark-config
+# @tiagoporto/dependabot-config
 
-> Shareable Config for [dependabot](https://github.com/dependabot/dependabot-core).
+[Dependabot](https://github.com/dependabot/dependabot-core) config.
 
 ```bash
 npm install --save-dev @tiagoporto/dependabot-config
