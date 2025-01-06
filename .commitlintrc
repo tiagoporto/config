@@ -8,6 +8,7 @@
       "always",
       [
         "dependabot-config",
+        "eslint-config",
         "editor-config",
         "prettier-config",
         "remark-config",

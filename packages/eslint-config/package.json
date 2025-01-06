@@ -1,0 +1,29 @@
+{
+  "name": "@tiagoporto/eslint-config",
+  "version": "0.0.0-development",
+  "repository": {
+    "url": "git+https://github.com/tiagoporto/config.git",
+    "directory": "packages/eslint-config"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "exports": "./index.mjs",
+  "license": "MIT",
+  "files": [
+    "configs/**",
+    "index.mjs"
+  ],
+  "scripts": {
+    "release": "npx semantic-release",
+    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "typescript-eslint": "^8.19.1"
+  },
+  "peerDependencies": {
+    "eslint": ">= 9"
+  }
+}

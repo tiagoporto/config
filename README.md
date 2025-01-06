@@ -4,11 +4,12 @@ My shareable configs:
 
 - [dependabot-config](./packages/dependabot-config/README.md)
 - [editor-config](./packages/editor-config/README.md)
+- [eslint-config](./packages/eslint-config/README.md)
 - [prettier-config](./packages/prettier-config/README.md)
 - [remark-config](./packages/remark-config/README.md)
 - [stylelint-config](./packages/stylelint-config/README.md)
 
-<!-- - [eslint-config]()
+<!--
 - [postcss-config]()
  -->
 
