@@ -67,7 +67,7 @@ Check staged files formatting
 ```mjs
 // .lintstagedrc.mjs
 export default {
-    '*.{md,mdx}': 'eslint --ext md,mdx --max-warnings 0',
+    '*.{md,mdx}': 'eslint --max-warnings 0',
   '*.{js,mjs,cjs,jsx,ts,tsx}': 'eslint --max-warnings 0',
 }
 ```
