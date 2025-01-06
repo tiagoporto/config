@@ -2,9 +2,13 @@
 
 Shareable Config for [stylelint](https://stylelint.io).
 
+## Installation
+
 ```bash
 npm install --save-dev stylelint @tiagoporto/stylelint-config
 ```
+
+## Usage
 
 ```mjs
 // .stylelintrc.mjs

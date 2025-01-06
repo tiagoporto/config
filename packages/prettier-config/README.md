@@ -2,9 +2,13 @@
 
 Shareable Config for [Prettier](https://prettier.io)
 
+## Installation
+
 ```bash
 npm install --save-dev prettier @tiagoporto/prettier-config
 ```
+
+## Usage
 
 ```json
 // .prettierrc
@@ -16,8 +20,8 @@ In `package.json` add the following scripts:
 ```json
 {
   "scripts": {
-    "check-formatting": "prettier --check --ignore-unknown \"**/*\"",
-    "check-formatting:fix": "npm run check-formatting -- --write"
+    "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
+    "formatting": "npm run formatting:check -- --write"
   }
 }
 ```

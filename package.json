@@ -8,8 +8,8 @@
   "scripts": {
     "prepare": "husky",
     "check-docs": "remark --frail .",
-    "check-formatting": "prettier --check --ignore-unknown \"**/*\"",
-    "check-formatting:fix": "npm run check-formatting -- --write",
+    "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
+    "formatting": "npm run formatting:check -- --write",
     "release": "npm run release --workspaces",
     "release:dry-run": "npm run release:dry-run --workspaces"
   },

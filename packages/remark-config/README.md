@@ -2,9 +2,13 @@
 
 Shareable Config for [remark](https://github.com/remarkjs/remark).
 
+## Installation
+
 ```bash
 npm install --save-dev remark remark-cli prettier @tiagoporto/remark-config
 ```
+
+## Usage
 
 ```json
 // .remarkrc
