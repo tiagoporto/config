@@ -1,0 +1,23 @@
+{
+  "name": "@tiagoporto/editor-config",
+  "version": "0.0.0-development",
+  "repository": {
+    "url": "git+https://github.com/tiagoporto/config.git",
+    "directory": "packages/editor-config"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "exports": "./index.mjs",
+  "license": "MIT",
+  "files": [
+    ".editorconfig",
+    "index.mjs"
+  ],
+  "scripts": {
+    "postinstall": "node ./index.mjs",
+    "release": "npx semantic-release",
+    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
+  }
+}

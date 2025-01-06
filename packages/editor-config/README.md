@@ -1,0 +1,17 @@
+# @tiagoporto/editor-config
+
+> Shareable Config for [EditorConfig](https://editorconfig.org).
+
+`@tiagoporto/editor-config` works integrate with [EditorConfig](https://editorconfig.org).
+
+```bash
+npm install --save-dev @tiagoporto/editor-config
+```
+
+> After install an `.editorconfig` file will be added to the root of your project.
+
+## Editor
+
+For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
+
+- [editorconfig](https://marketplace.visualstudio.com/items?itemName=editorconfig.editorconfig)
