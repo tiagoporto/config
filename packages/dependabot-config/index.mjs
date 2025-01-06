@@ -4,7 +4,8 @@ import path from 'path'
 import child_process from 'child_process'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const packageName = '@tiagoporto/dependabot-config'
+const jsonData = fs.readFileSync('./package.json', 'utf8')
+const { name: packageName } = JSON.parse(jsonData)
 const fileName = 'dependabot.yml'
 let sourceFileName = 'dependabot.yml'
 let gitRoot

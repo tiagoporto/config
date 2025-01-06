@@ -2,6 +2,8 @@
 
 [Dependabot](https://github.com/dependabot/dependabot-core) config.
 
+## Installation
+
 ```bash
 npm install --save-dev @tiagoporto/dependabot-config
 ```
