@@ -3,7 +3,8 @@ import fs from 'fs'
 import path from 'path'
 import child_process from 'child_process'
 
-const packageName = '@tiagoporto/editor-config'
+const jsonData = fs.readFileSync('./package.json', 'utf8')
+const { name: packageName } = JSON.parse(jsonData)
 const fileName = '.editorconfig'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const source = path.join(__dirname, fileName)

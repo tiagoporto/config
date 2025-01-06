@@ -2,6 +2,8 @@
 
 [EditorConfig](https://editorconfig.org) settings.
 
+## Installation
+
 ```bash
 npm install --save-dev @tiagoporto/editor-config
 ```
