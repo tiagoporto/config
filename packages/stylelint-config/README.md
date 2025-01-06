@@ -1,11 +1,9 @@
 # @tiagoporto/stylelint-config
 
-> Shareable Config for [stylelint](https://stylelint.io).
-
-`@tiagoporto/stylelint-config` works integrate with [stylelint](https://stylelint.io) and [sass](https://sass-lang.com).
+Shareable Config for [stylelint](https://stylelint.io).
 
 ```bash
-npm install --save-dev stylelint sass-embedded @tiagoporto/stylelint-config
+npm install --save-dev stylelint @tiagoporto/stylelint-config
 ```
 
 ```mjs
