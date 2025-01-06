@@ -1,8 +1,6 @@
 # @tiagoporto/prettier-config
 
-> Shareable Config for [Prettier](https://prettier.io)
-
-`@tiagoporto/prettier-config` work integrate with the code formatting [Prettier](https://prettier.io).
+Shareable Config for [Prettier](https://prettier.io)
 
 ```bash
 npm install --save-dev prettier @tiagoporto/prettier-config

@@ -1,8 +1,6 @@
 # @tiagoporto/editor-config
 
-> Shareable Config for [EditorConfig](https://editorconfig.org).
-
-`@tiagoporto/editor-config` works integrate with [EditorConfig](https://editorconfig.org).
+[EditorConfig](https://editorconfig.org) settings.
 
 ```bash
 npm install --save-dev @tiagoporto/editor-config

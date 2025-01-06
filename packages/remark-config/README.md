@@ -1,8 +1,6 @@
 # @tiagoporto/remark-config
 
-> Shareable Config for [remark](https://github.com/remarkjs/remark).
-
-`@tiagoporto/remark-config` works integrate with [remark](https://github.com/remarkjs/remark).
+Shareable Config for [remark](https://github.com/remarkjs/remark).
 
 ```bash
 npm install --save-dev remark remark-cli prettier @tiagoporto/remark-config
