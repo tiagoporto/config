@@ -34,9 +34,9 @@ export default [
 ];
 ```
 
-### default config
+### base config
 
-Lint `js`,`mjs`,`cjs`,`ts`,`jsx` and `tsx` files
+Lint `js`,`mjs`,`cjs`, `jsx`, `json`, `jsonc` and `json5` files
 
 ```mjs
 // eslint.config.mjs
@@ -45,7 +45,22 @@ import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-    ...tpConfig.configs.default,
+    ...tpConfig.configs.base,
+];
+```
+
+### typeScript config
+
+Lint all files from base with `ts` and `tsx` files
+
+```mjs
+// eslint.config.mjs
+import tpConfig from '@tiagoporto/eslint-config'
+
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [
+    ...tpConfig.configs.typeScript,
 ];
 ```
 

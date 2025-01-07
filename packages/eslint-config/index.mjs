@@ -1,5 +1,6 @@
 import fs from 'fs'
-import defaultConfig from './configs/default.config.mjs'
+import base from './configs/base.config.mjs'
+import typeScript from './configs/typescript.config.mjs'
 
 const jsonData = fs.readFileSync('./package.json', 'utf8')
 const { name, version } = JSON.parse(jsonData)
@@ -10,6 +11,7 @@ export default {
     version,
   },
   configs: {
-    default: defaultConfig,
+    base,
+    typeScript,
   },
 }
