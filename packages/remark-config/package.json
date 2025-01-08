@@ -1,16 +1,28 @@
 {
   "name": "@tiagoporto/remark-config",
   "version": "0.0.0-development",
-  "type": "module",
   "main": "index.js",
-  "license": "MIT",
   "files": [
     "index.js"
   ],
+  "description": "Shareable Config for remark",
+  "author": {
+    "name": "Tiago Porto",
+    "url": "https://tiagoporto.com"
+  },
   "repository": {
     "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/remark-config"
   },
+  "keywords": [
+    "remark",
+    "shareable",
+    "config"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
   "scripts": {
     "release": "npx semantic-release",
     "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"

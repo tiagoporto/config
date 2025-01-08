@@ -1,15 +1,25 @@
 {
   "name": "@tiagoporto/prettier-config",
   "version": "0.0.0-development",
-  "main": "index.json",
-  "license": "MIT",
-  "files": [
-    "index.json"
-  ],
+  "description": "Shareable Config for Prettier.",
   "repository": {
     "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/prettier-config"
   },
+  "author": {
+    "name": "Tiago Porto",
+    "url": "https://tiagoporto.com"
+  },
+  "keywords": [
+    "prettier",
+    "shareable",
+    "config"
+  ],
+  "license": "MIT",
+  "main": "index.json",
+  "files": [
+    "index.json"
+  ],
   "scripts": {
     "release": "npx semantic-release",
     "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"

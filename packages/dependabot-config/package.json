@@ -1,16 +1,26 @@
 {
   "name": "@tiagoporto/dependabot-config",
   "version": "0.0.0-development",
-  "type": "module",
-  "exports": "./index.mjs",
-  "license": "MIT",
+  "description": "Dependabot config setup.",
   "repository": {
     "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/dependabot-config"
   },
+  "author": {
+    "name": "Tiago Porto",
+    "url": "https://tiagoporto.com"
+  },
+  "keywords": [
+    "dependabot",
+    "setup",
+    "config"
+  ],
   "engines": {
     "node": ">=18"
   },
+  "type": "module",
+  "exports": "./index.mjs",
+  "license": "MIT",
   "files": [
     "dependabot-conventional.yml",
     "dependabot.yml",

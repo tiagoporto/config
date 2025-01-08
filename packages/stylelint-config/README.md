@@ -1,6 +1,6 @@
 # @tiagoporto/stylelint-config
 
-Shareable Config for [stylelint](https://stylelint.io).
+Shareable Config for [Stylelint](https://stylelint.io).
 
 ## Installation
 

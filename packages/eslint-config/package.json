@@ -1,10 +1,20 @@
 {
   "name": "@tiagoporto/eslint-config",
   "version": "0.0.0-development",
+  "description": "Shareable Config for ESlint.",
   "repository": {
     "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/eslint-config"
   },
+  "author": {
+    "name": "Tiago Porto",
+    "url": "https://tiagoporto.com"
+  },
+  "keywords": [
+    "eslint",
+    "shareable",
+    "config"
+  ],
   "engines": {
     "node": ">=18"
   },

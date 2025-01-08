@@ -1,10 +1,20 @@
 {
   "name": "@tiagoporto/stylelint-config",
   "version": "0.0.0-development",
+  "description": "Shareable Config for Stylelint.",
+  "author": {
+    "name": "Tiago Porto",
+    "url": "https://tiagoporto.com"
+  },
   "repository": {
     "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/stylelint-config"
   },
+  "keywords": [
+    "stylelint",
+    "shareable",
+    "config"
+  ],
   "engines": {
     "node": ">=18"
   },

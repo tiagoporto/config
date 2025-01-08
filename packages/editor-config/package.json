@@ -1,10 +1,20 @@
 {
   "name": "@tiagoporto/editor-config",
   "version": "0.0.0-development",
+  "description": "EditorConfig settings setup.",
   "repository": {
     "url": "git+https://github.com/tiagoporto/config.git",
     "directory": "packages/editor-config"
   },
+  "author": {
+    "name": "Tiago Porto",
+    "url": "https://tiagoporto.com"
+  },
+  "keywords": [
+    "editorconfig",
+    "setup",
+    "config"
+  ],
   "engines": {
     "node": ">=18"
   },
