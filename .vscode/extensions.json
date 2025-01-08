@@ -4,6 +4,7 @@
   "recommendations": [
     "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
-    "unifiedjs.vscode-remark"
+    "unifiedjs.vscode-remark",
+    "dbaeumer.vscode-eslint"
   ]
 }
