@@ -15,5 +15,5 @@ My shareable configs:
 
 ## Stack 🧰
 
-![Conventional Commits](https://img.shields.io/badge/conventional%20commits-%23FE5196.svg?style=for-the-badge\&logo=conventionalcommits\&logoColor=white)
-![Semantic Release](https://img.shields.io/badge/semantic%20release-%23494949.svg?style=for-the-badge\&logo=semanticrelease)
+![Conventional Commits](https://img.shields.io/badge/conventional%20commits-%23FE5196.svg?style=for-the-badge&logo=conventionalcommits&logoColor=white)
+![Semantic Release](https://img.shields.io/badge/semantic%20release-%23494949.svg?style=for-the-badge&logo=semanticrelease)

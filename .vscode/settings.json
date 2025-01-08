@@ -1,6 +1,1 @@
-{
-  "[markdown]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-remark",
-    "editor.formatOnSave": true
-  }
-}
+{}

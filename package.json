@@ -2,12 +2,13 @@
   "name": "@tiagoporto/config",
   "version": "0.0.0-development",
   "private": true,
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "prepare": "husky",
-    "check-docs": "remark --frail .",
+    "check-docs": "remark --frail . --ext md,markdown,mdx",
     "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
     "formatting": "npm run formatting:check -- --write",
     "lint": "eslint --max-warnings 0",
