@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "prepare": "husky",
+    "checks": "npm run check-docs && npm run formatting:check && npm run lint",
     "check-docs": "remark --frail . --ext md,markdown,mdx",
     "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
     "formatting": "npm run formatting:check -- --write",
