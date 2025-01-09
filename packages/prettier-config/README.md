@@ -11,7 +11,7 @@ npm install --save-dev prettier @tiagoporto/prettier-config
 ## Usage
 
 ```json
-// .prettierrc
+// .prettierrc.json
 "@tiagoporto/prettier-config"
 ```
 
