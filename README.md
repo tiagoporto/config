@@ -8,6 +8,7 @@ My shareable configs:
 - [prettier-config](./packages/prettier-config/README.md)
 - [remark-config](./packages/remark-config/README.md)
 - [stylelint-config](./packages/stylelint-config/README.md)
+- [ts-config](./packages/ts-config/README.md)
 
 <!--
 - [postcss-config]()
