@@ -11,14 +11,14 @@ export default [
   // lint JSON files
   {
     files: ['**/*.json'],
-    ignores: ['package-lock.json', '.vscode/*', 'tsconfig.json'],
+    ignores: ['package-lock.json', '.vscode/*', '**/tsconfig.json'],
     language: 'json/json',
     ...json.configs.recommended,
   },
 
   // lint JSONC files
   {
-    files: ['**/*.jsonc', '.vscode/**/*.json', 'tsconfig.json'],
+    files: ['**/*.jsonc', '.vscode/**/*.json', '**/tsconfig.json'],
     language: 'json/jsonc',
     ...json.configs.recommended,
   },
