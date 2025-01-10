@@ -93,11 +93,11 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
 
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-```json
+```jsonc
 // .vscode/settings.json
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
-  },
+  }
 }
 ```

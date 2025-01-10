@@ -10,7 +10,7 @@ npm install --save-dev remark remark-cli @tiagoporto/remark-config
 
 ## Usage
 
-```json
+```jsonc
 // .remarkrc
 {
   "plugins": ["@tiagoporto/remark-config"]
@@ -19,7 +19,7 @@ npm install --save-dev remark remark-cli @tiagoporto/remark-config
 
 ### MDX
 
-```json
+```jsonc
 // .remarkrc
 {
   "plugins": ["@tiagoporto/remark-config/mdx"]

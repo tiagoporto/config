@@ -45,7 +45,7 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
 
 - [Stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
 
-```json
+```jsonc
 // .vscode/settings.json
 {
   "editor.codeActionsOnSave": {

@@ -1,5 +1,6 @@
 import pluginJs from '@eslint/js'
 import json from '@eslint/json'
+import * as mdx from 'eslint-plugin-mdx'
 
 export const baseConfig = { ...pluginJs.configs.recommended }
 
@@ -28,5 +29,13 @@ export default [
     files: ['**/*.json5'],
     language: 'json/json5',
     ...json.configs.recommended,
+  },
+  // lint MARKDOWN and code block files
+  {
+    files: ['**/*.{md,mdx}'],
+    ...mdx.flat,
+    processor: mdx.createRemarkProcessor({
+      lintCodeBlocks: true,
+    }),
   },
 ]

@@ -25,7 +25,7 @@ export default {
 
 Set the TypeScript SDK to workspace
 
-```json
+```jsonc
 // .vscode/settings.json
 {
   "typescript.tsdk": "node_modules/typescript/lib"
