@@ -39,5 +39,6 @@ export default {
         .use(retextSyntaxMentions),
     ],
     remarkPresetPrettier,
+    ['remark-lint-no-file-name-mixed-case', false],
   ],
 }
