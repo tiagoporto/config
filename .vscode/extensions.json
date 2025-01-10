@@ -6,5 +6,6 @@
     "esbenp.prettier-vscode",
     "unifiedjs.vscode-remark",
     "dbaeumer.vscode-eslint"
-  ]
+  ],
+  "unwantedRecommendations": []
 }
