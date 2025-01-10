@@ -40,5 +40,6 @@ export default {
     ],
     remarkPresetPrettier,
     ['remark-lint-no-file-name-mixed-case', false],
+    ['remark-lint-file-extension', false],
   ],
 }
