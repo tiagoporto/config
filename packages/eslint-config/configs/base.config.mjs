@@ -32,8 +32,19 @@ export default [
   },
   // lint MARKDOWN and code block files
   {
-    files: ['**/*.{md,mdx}'],
     ...mdx.flat,
+    files: ['**/*.md'],
+    processor: mdx.createRemarkProcessor({
+      lintCodeBlocks: true,
+    }),
+    rules: {
+      ...mdx.flat.rules,
+      'mdx/remark': 'off',
+    },
+  },
+  {
+    ...mdx.flat,
+    files: ['**/*.mdx'],
     processor: mdx.createRemarkProcessor({
       lintCodeBlocks: true,
     }),
