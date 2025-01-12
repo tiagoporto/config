@@ -42,3 +42,11 @@ export default {
 For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
 
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+```jsonc
+// .vscode/settings.json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}
+```

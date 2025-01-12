@@ -49,8 +49,9 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
 // .vscode/settings.json
 {
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": "always"
+    "source.fixAll": "explicit"
   },
+  "editor.formatOnSave": true,
   "stylelint.validate": ["css", "scss"]
 }
 ```
