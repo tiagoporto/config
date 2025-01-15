@@ -6,10 +6,10 @@ export const baseConfig = { ...pluginJs.configs.recommended }
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  // lint JS files
+  // JS files
   { files: ['**/*.{js,mjs,cjs,jsx}'], ...baseConfig },
 
-  // lint JSON files
+  // JSON files
   {
     files: ['**/*.json'],
     ignores: ['package-lock.json', '.vscode/*', '**/tsconfig.json'],
@@ -17,20 +17,21 @@ export default [
     ...json.configs.recommended,
   },
 
-  // lint JSONC files
+  // JSONC files
   {
     files: ['**/*.jsonc', '.vscode/**/*.json', '**/tsconfig.json'],
     language: 'json/jsonc',
     ...json.configs.recommended,
   },
 
-  // lint JSON5 files
+  // JSON5 files
   {
     files: ['**/*.json5'],
     language: 'json/json5',
     ...json.configs.recommended,
   },
-  // lint MARKDOWN and code block files
+
+  // MARKDOWN files and code blocks
   {
     ...mdx.flat,
     files: ['**/*.md'],
@@ -42,11 +43,22 @@ export default [
       'mdx/remark': 'off',
     },
   },
+
+  // MDX files and code blocks
   {
     ...mdx.flat,
     files: ['**/*.mdx'],
     processor: mdx.createRemarkProcessor({
       lintCodeBlocks: true,
     }),
+  },
+
+  // Markdown and MDX code blocks
+  {
+    files: ['**/*.{md,mdx}/*'],
+    ...mdx.flatCodeBlocks,
+    rules: {
+      ...mdx.flatCodeBlocks.rules,
+    },
   },
 ]
