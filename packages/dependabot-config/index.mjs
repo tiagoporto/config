@@ -1,7 +1,7 @@
-import { fileURLToPath } from 'url'
+import child_process from 'child_process'
 import fs from 'fs'
 import path from 'path'
-import child_process from 'child_process'
+import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const jsonData = fs.readFileSync('./package.json', 'utf8')
@@ -48,4 +48,4 @@ if (fs.existsSync(dest)) {
 const data = fs.readFileSync(source)
 fs.writeFileSync(dest, data, { mode: 0o444 })
 
-console.log(`\x1b[0;32m${packageName}: Created .github/${fileName}\x1b[0m`)
+console.info(`\x1b[0;32m${packageName}: Created .github/${fileName}\x1b[0m`)

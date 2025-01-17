@@ -1,8 +1,62 @@
 import pluginJs from '@eslint/js'
 import json from '@eslint/json'
+import importPlugin from 'eslint-plugin-import'
 import * as mdx from 'eslint-plugin-mdx'
 
-export const baseConfig = { ...pluginJs.configs.recommended }
+const { languageOptions, ...restImportConfig } =
+  importPlugin.flatConfigs.recommended
+
+export const baseConfig = {
+  ...pluginJs.configs.recommended,
+  ...restImportConfig,
+  rules: {
+    ...pluginJs.configs.recommended.rules,
+    'no-void': ['error', { allowAsStatement: true }],
+    'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+    'no-alert': 'error',
+    'no-debugger': 'error',
+    'no-nested-ternary': 'error',
+    'no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'all',
+        caughtErrors: 'all',
+        ignoreRestSiblings: true,
+      },
+    ],
+    ...restImportConfig.rules,
+    'import/order': [
+      'warn',
+      {
+        groups: [
+          ['builtin', 'external'],
+          'internal',
+          'unknown',
+          ['parent', 'sibling', 'index'],
+          'object',
+        ],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        distinctGroup: false,
+
+        pathGroupsExcludedImportTypes: ['react'],
+        'newlines-between': 'always',
+        named: true,
+        warnOnUnassignedImports: true,
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+  },
+}
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
