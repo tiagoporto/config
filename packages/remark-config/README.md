@@ -68,3 +68,4 @@ export default {
 For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
 
 - [remark](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-remark)
+- [mdx](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
