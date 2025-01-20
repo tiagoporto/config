@@ -35,7 +35,7 @@ Check staged markdown
 ```mjs
 // .lintstagedrc.mjs
 export default {
-  '*.{scss,vue}': ['stylelint --fix'],
+  '*.{css,scss}': 'stylelint --fix',
 }
 ```
 
