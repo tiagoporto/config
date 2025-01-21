@@ -88,7 +88,13 @@ export default [
   // MARKDOWN files and code blocks
   {
     ...mdx.flat,
-    files: ['**/*.md'],
+    files: ['**/*.{md,markdown}'],
+    languageOptions: {
+      ...mdx.flat.languageOptions,
+      parserOptions: {
+        markdownExtensions: ['.md', '.markdown'],
+      },
+    },
     processor: mdx.createRemarkProcessor({
       lintCodeBlocks: true,
     }),
@@ -109,10 +115,12 @@ export default [
 
   // Markdown and MDX code blocks
   {
-    files: ['**/*.{md,mdx}/*'],
+    ...mdx.flat,
     ...mdx.flatCodeBlocks,
+    files: ['**/*.{md,markdown,mdx}/*'],
     rules: {
       ...mdx.flatCodeBlocks.rules,
+      'mdx/remark': 'warn',
     },
   },
 ]
