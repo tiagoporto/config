@@ -51,7 +51,7 @@ export default [
 
 ### typeScript config
 
-Lint all files from base with `ts` and `tsx` files
+Lint all files from base with `ts`, `mts`, `cts` and `tsx` files
 
 ```mjs
 // eslint.config.mjs
@@ -83,7 +83,7 @@ Check staged files formatting
 // .lintstagedrc.mjs
 export default {
     '*.{md,markdown,mdx}': 'eslint --max-warnings 0',
-  '*.{js,mjs,cjs,jsx,ts,tsx}': 'eslint --max-warnings 0',
+  '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': 'eslint --max-warnings 0',
 }
 ```
 

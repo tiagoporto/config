@@ -5,14 +5,18 @@ import base, { baseConfig } from './base.config.mjs'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default tseslint.config(base, {
+  languageOptions: {
+    ...baseConfig.languageOptions,
+    ...tseslint.configs.recommended[0].languageOptions,
+  },
+  plugins: {
+    ...baseConfig.plugins,
+    ...tseslint.configs.recommended[0].plugins,
+  },
   files: ['**/*.{ts,tsx,mts,cts}'],
-  ...tseslint.configs.recommended[0],
-  ...tseslint.configs.recommended[1],
-  ...tseslint.configs.recommended[2],
   rules: {
     ...baseConfig.rules,
     ...tseslint.configs.recommended[1].rules,
     ...tseslint.configs.recommended[2].rules,
   },
-  name: 'typescript/recommended',
 })

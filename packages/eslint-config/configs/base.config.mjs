@@ -1,16 +1,15 @@
-import pluginJs from '@eslint/js'
+import js from '@eslint/js'
 import json from '@eslint/json'
 import importPlugin from 'eslint-plugin-import'
 import * as mdx from 'eslint-plugin-mdx'
 
-const { languageOptions, ...restImportConfig } =
-  importPlugin.flatConfigs.recommended
-
 export const baseConfig = {
-  ...pluginJs.configs.recommended,
-  ...restImportConfig,
+  languageOptions: {},
+  plugins: {
+    ...importPlugin.flatConfigs.recommended.plugins,
+  },
   rules: {
-    ...pluginJs.configs.recommended.rules,
+    ...js.configs.recommended.rules,
     'no-void': ['error', { allowAsStatement: true }],
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
     'no-alert': 'error',
@@ -25,7 +24,7 @@ export const baseConfig = {
         ignoreRestSiblings: true,
       },
     ],
-    ...restImportConfig.rules,
+    ...importPlugin.flatConfigs.recommended.rules,
     'import/order': [
       'warn',
       {
