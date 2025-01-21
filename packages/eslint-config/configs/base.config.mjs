@@ -25,6 +25,7 @@ export const baseConfig = {
       },
     ],
     ...importPlugin.flatConfigs.recommended.rules,
+    'import/no-unresolved': 'off',
     'import/order': [
       'warn',
       {
@@ -84,7 +85,7 @@ export default [
     ...json.configs.recommended,
   },
 
-  // MARKDOWN files and code blocks
+  // MARKDOWN files
   {
     ...mdx.flat,
     files: ['**/*.{md,markdown}'],
@@ -120,6 +121,10 @@ export default [
     rules: {
       ...mdx.flatCodeBlocks.rules,
       'mdx/remark': 'warn',
+      'no-void': 'off',
+      'no-console': 'off',
+      'no-alert': 'off',
+      'no-debugger': 'off',
     },
   },
 ]

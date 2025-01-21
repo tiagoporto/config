@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import tseslint from 'typescript-eslint'
 
 import base, { baseConfig } from './base.config.mjs'
