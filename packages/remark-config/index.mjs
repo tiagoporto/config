@@ -9,7 +9,6 @@ import remarkPresetPrettier from 'remark-preset-prettier'
 import remarkRetext from 'remark-retext'
 import remarkValidateLinks from 'remark-validate-links'
 import retextEnglish from 'retext-english'
-// eslint-disable-next-line import/no-unresolved
 import retextEquality from 'retext-equality'
 import retextQuotes from 'retext-quotes'
 import retextSyntaxMentions from 'retext-syntax-mentions'
