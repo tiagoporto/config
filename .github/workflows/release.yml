@@ -7,7 +7,7 @@ jobs:
     uses: ./.github/workflows/checks.yml
     secrets: inherit
 
-  publish-npm:
+  release:
     runs-on: ubuntu-latest
     permissions:
       contents: write # to be able to publish a GitHub release
@@ -29,7 +29,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci --ignore-scripts
 
-      - name: Release packages
+      - name: Bump versions, add tags, publish packages and create github releases
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
