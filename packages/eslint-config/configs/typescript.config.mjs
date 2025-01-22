@@ -16,7 +16,7 @@ export default tseslint.config(base, {
   files: ['**/*.{ts,tsx,mts,cts}'],
   rules: {
     ...baseConfig.rules,
-    ...jsdoc.configs['flat/recommended-typescript'],
+    ...jsdoc.configs['flat/recommended-typescript'].rules,
     ...tseslint.configs.recommended[1].rules,
     ...tseslint.configs.recommended[2].rules,
   },
