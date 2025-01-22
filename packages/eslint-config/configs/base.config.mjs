@@ -1,12 +1,16 @@
 import js from '@eslint/js'
 import json from '@eslint/json'
+import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import importPlugin from 'eslint-plugin-import'
+import jsdoc from 'eslint-plugin-jsdoc'
 import * as mdx from 'eslint-plugin-mdx'
 
 export const baseConfig = {
   languageOptions: {},
   plugins: {
     ...importPlugin.flatConfigs.recommended.plugins,
+    ...comments.recommended.plugins,
+    ...jsdoc.configs['flat/recommended'].plugins,
   },
   rules: {
     ...js.configs.recommended.rules,
@@ -55,6 +59,8 @@ export const baseConfig = {
         },
       },
     ],
+    ...comments.recommended.rules,
+    ...jsdoc.configs['flat/recommended'].rules,
   },
 }
 
