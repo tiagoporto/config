@@ -18,8 +18,10 @@ import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {languageOptions: { globals: globals.browser }},
-];
+  {
+    languageOptions: { globals: globals.browser }
+  }
+]
 ```
 
 ### Node
@@ -29,9 +31,7 @@ export default [
 import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
-  {languageOptions: { globals: globals.node }},
-];
+export default [{ languageOptions: { globals: globals.node } }]
 ```
 
 ### base config
@@ -42,11 +42,8 @@ Lint `js`,`mjs`,`cjs`, `jsx`, `json`, `jsonc` and `json5` files
 // eslint.config.mjs
 import tpConfig from '@tiagoporto/eslint-config'
 
-
 /** @type {import('eslint').Linter.Config[]} */
-export default [
-    ...tpConfig.configs.base,
-];
+export default [...tpConfig.configs.base]
 ```
 
 ### typeScript config
@@ -57,11 +54,8 @@ Lint all files from base with `ts`, `mts`, `cts` and `tsx` files
 // eslint.config.mjs
 import tpConfig from '@tiagoporto/eslint-config'
 
-
 /** @type {import('eslint').Linter.Config[]} */
-export default [
-    ...tpConfig.configs.typeScript,
-];
+export default [...tpConfig.configs.typeScript]
 ```
 
 In `package.json` add the following scripts:
@@ -82,8 +76,8 @@ Check staged files formatting
 ```mjs
 // .lintstagedrc.mjs
 export default {
-    '*.{md,markdown,mdx}': 'eslint --max-warnings 0',
-  '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': 'eslint --max-warnings 0',
+  '*.{md,markdown,mdx}': 'eslint --max-warnings 0',
+  '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': 'eslint --max-warnings 0'
 }
 ```
 

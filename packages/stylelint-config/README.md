@@ -13,7 +13,7 @@ npm install --save-dev stylelint @tiagoporto/stylelint-config
 ```mjs
 // .stylelintrc.mjs
 export default {
-  extends: ['@tiagoporto/stylelint-config'],
+  extends: ['@tiagoporto/stylelint-config']
 }
 ```
 
@@ -35,7 +35,7 @@ Check staged markdown
 ```mjs
 // .lintstagedrc.mjs
 export default {
-  '*.{css,scss}': 'stylelint --fix',
+  '*.{css,scss}': 'stylelint --fix'
 }
 ```
 

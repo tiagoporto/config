@@ -30,6 +30,7 @@ Note: Running this settings against `md` files can return unexpected results. Ex
 
 The workaround is to create a new `.remarkrc` file under mdx folder.
 
+<!-- prettier-ignore -->
 ```md
 .
 ├── packages
@@ -39,7 +40,6 @@ The workaround is to create a new `.remarkrc` file under mdx folder.
 │
 ├── .remarkrc
 └── README.md
-
 ```
 
 In `package.json` add the following scripts:
@@ -59,7 +59,7 @@ Check staged markdown
 ```mjs
 // .lintstagedrc.mjs
 export default {
-  '*.{md,markdown,mdx}': 'remark --frail',
+  '*.{md,markdown,mdx}': 'remark --frail'
 }
 ```
 
