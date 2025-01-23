@@ -20,9 +20,9 @@
   },
   "type": "module",
   "license": "MIT",
-  "exports": "./index.json",
+  "exports": "./index.mjs",
   "files": [
-    "index.json"
+    "index.mjs"
   ],
   "scripts": {
     "release": "npx semantic-release",

@@ -10,9 +10,11 @@ npm install --save-dev prettier @tiagoporto/prettier-config
 
 ## Usage
 
-```jsonc
-// .prettierrc.json
-"@tiagoporto/prettier-config"
+```mjs
+// .prettierrc.mjs
+import tpConfig from '@tiagoporto/prettier-config'
+
+export default tpConfig
 ```
 
 In `package.json` add the following scripts:
@@ -33,7 +35,7 @@ Check staged files formatting
 ```mjs
 // .lintstagedrc.mjs
 export default {
-  '*': 'prettier --check --ignore-unknown --write',
+  '*': 'prettier --check --ignore-unknown --write'
 }
 ```
 
