@@ -71,7 +71,7 @@ In `package.json` add the following scripts:
 
 ## Lint-staged
 
-Check staged files formatting
+Check staged files
 
 ```mjs
 // .lintstagedrc.mjs

@@ -22,15 +22,15 @@ In `package.json` add the following scripts:
 ```json
 {
   "scripts": {
-    "formatting:check": "prettier --check --ignore-unknown \"**/*\"",
-    "formatting": "npm run formatting:check -- --write"
+    "format:check": "prettier --check --ignore-unknown \"**/*\"",
+    "format": "npm run format:check -- --write"
   }
 }
 ```
 
 ## Lint-staged
 
-Check staged files formatting
+Check staged files
 
 ```mjs
 // .lintstagedrc.mjs
