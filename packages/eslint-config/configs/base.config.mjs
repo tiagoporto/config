@@ -4,6 +4,7 @@ import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import importPlugin from 'eslint-plugin-import'
 import jsdoc from 'eslint-plugin-jsdoc'
 import * as mdx from 'eslint-plugin-mdx'
+import pluginPromise from 'eslint-plugin-promise'
 
 export const baseConfig = {
   languageOptions: {},
@@ -11,6 +12,7 @@ export const baseConfig = {
     ...importPlugin.flatConfigs.recommended.plugins,
     ...comments.recommended.plugins,
     ...jsdoc.configs['flat/recommended'].plugins,
+    ...pluginPromise.configs['flat/recommended'].plugins,
   },
   rules: {
     ...js.configs.recommended.rules,
@@ -59,6 +61,7 @@ export const baseConfig = {
         },
       },
     ],
+    ...pluginPromise.configs['flat/recommended'].rules,
     ...comments.recommended.rules,
     ...jsdoc.configs['flat/recommended'].rules,
   },
