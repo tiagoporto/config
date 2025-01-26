@@ -1,5 +1,6 @@
-import tpConfig from '@tiagoporto/eslint-config'
 import globals from 'globals'
+
+import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [

@@ -1,23 +1,26 @@
-import jsdoc from 'eslint-plugin-jsdoc'
-import tseslint from 'typescript-eslint'
+import eslintPluginImportX from 'eslint-plugin-import-x'
+import { plugins } from 'neostandard'
 
 import base, { baseConfig } from './base.config.mjs'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default tseslint.config(base, {
-  languageOptions: {
-    ...baseConfig.languageOptions,
-    ...tseslint.configs.recommended[0].languageOptions,
+export default plugins['typescript-eslint'].config(
+  base,
+  {
+    languageOptions: {
+      ...baseConfig.languageOptions,
+      ...plugins['typescript-eslint'].configs.recommended[0].languageOptions,
+    },
+    plugins: {
+      ...baseConfig.plugins,
+      ...plugins['typescript-eslint'].configs.recommended[0].plugins,
+    },
+    files: ['**/*.{ts,tsx,mts,cts}'],
+    rules: {
+      ...baseConfig.rules,
+      ...plugins['typescript-eslint'].configs.recommended[1].rules,
+      ...plugins['typescript-eslint'].configs.recommended[2].rules,
+    },
   },
-  plugins: {
-    ...baseConfig.plugins,
-    ...tseslint.configs.recommended[0].plugins,
-  },
-  files: ['**/*.{ts,tsx,mts,cts}'],
-  rules: {
-    ...baseConfig.rules,
-    ...jsdoc.configs['flat/recommended-typescript'].rules,
-    ...tseslint.configs.recommended[1].rules,
-    ...tseslint.configs.recommended[2].rules,
-  },
-})
+  eslintPluginImportX.flatConfigs.typescript,
+)

@@ -1,20 +1,19 @@
 import js from '@eslint/js'
 import json from '@eslint/json'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
-import importPlugin from 'eslint-plugin-import'
 import jsdoc from 'eslint-plugin-jsdoc'
 import * as mdx from 'eslint-plugin-mdx'
 import noSecrets from 'eslint-plugin-no-secrets'
-import pluginPromise from 'eslint-plugin-promise'
+import { plugins } from 'neostandard'
 
 export const baseConfig = {
   languageOptions: {},
   plugins: {
     'no-secrets': noSecrets,
-    ...importPlugin.flatConfigs.recommended.plugins,
+    ...plugins['import-x'].flatConfigs.recommended.plugins,
     ...comments.recommended.plugins,
     ...jsdoc.configs['flat/recommended'].plugins,
-    ...pluginPromise.configs['flat/recommended'].plugins,
+    ...plugins.promise.configs['flat/recommended'].plugins,
   },
   rules: {
     ...js.configs.recommended.rules,
@@ -32,9 +31,9 @@ export const baseConfig = {
         ignoreRestSiblings: true,
       },
     ],
-    ...importPlugin.flatConfigs.recommended.rules,
-    'import/no-unresolved': 'off',
-    'import/order': [
+    ...plugins['import-x'].flatConfigs.recommended.rules,
+    'import-x/no-unresolved': 'off',
+    'import-x/order': [
       'warn',
       {
         groups: [
@@ -52,10 +51,9 @@ export const baseConfig = {
           },
         ],
         distinctGroup: false,
-
         pathGroupsExcludedImportTypes: ['react'],
         'newlines-between': 'always',
-        named: true,
+        // named: true,
         warnOnUnassignedImports: true,
         alphabetize: {
           order: 'asc',
@@ -63,7 +61,7 @@ export const baseConfig = {
         },
       },
     ],
-    ...pluginPromise.configs['flat/recommended'].rules,
+    ...plugins.promise.configs['flat/recommended'].rules,
     ...comments.recommended.rules,
     ...jsdoc.configs['flat/recommended'].rules,
     'no-secrets/no-secrets': 'error',
