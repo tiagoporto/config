@@ -3,11 +3,13 @@ import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import { saveFile } from './saveFile.mjs'
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const jsonData = fs.readFileSync('./package.json', 'utf8')
 const { name: packageName } = JSON.parse(jsonData)
 const fileName = 'dependabot.yml'
-let sourceFileName = 'dependabot.yml'
+let isUsingConventionalCommits = false
 let gitRoot
 
 try {
@@ -20,32 +22,36 @@ try {
   process.exit(0)
 }
 // check if uses conventional commits
-const json = JSON.parse(
+const installedPackages = JSON.parse(
   fs.readFileSync(path.join(gitRoot, 'package.json'), 'utf8'),
 )
 if (
-  json.dependencies?.['@commitlint/config-conventional'] ||
-  json.devDependencies?.['@commitlint/config-conventional']
+  installedPackages.dependencies?.['@commitlint/config-conventional'] ||
+  installedPackages.devDependencies?.['@commitlint/config-conventional']
 ) {
-  sourceFileName = 'dependabot-conventional.yml'
+  isUsingConventionalCommits = true
 }
 
-const source = path.join(__dirname, sourceFileName)
-const dest = path.join(gitRoot, '.github', fileName)
+const dependabotFileName = isUsingConventionalCommits
+  ? 'dependabot-conventional.yml'
+  : 'dependabot.yml'
+const dependabotSource = path.join(__dirname, dependabotFileName)
+const dependabotDest = path.join(gitRoot, '.github', fileName)
 
-if (source === dest) {
-  process.exit(0)
+saveFile({
+  dest: dependabotDest,
+  source: dependabotSource,
+  fileName: `.github/${dependabotFileName}`,
+})
+
+if (isUsingConventionalCommits) {
+  const semanticFileName = 'semantic.yml'
+  const semanticSource = path.join(__dirname, semanticFileName)
+  const semanticDest = path.join(gitRoot, '.github', semanticFileName)
+
+  saveFile({
+    dest: semanticDest,
+    source: semanticSource,
+    fileName: `.github/${semanticFileName}`,
+  })
 }
-
-if (fs.existsSync(dest)) {
-  fs.unlinkSync(dest)
-
-  console.warn(
-    `\x1b[0;33m${packageName}: Deleted existing .github/${fileName}\x1b[0m`,
-  )
-}
-
-const data = fs.readFileSync(source)
-fs.writeFileSync(dest, data, { mode: 0o444 })
-
-console.info(`\x1b[0;32m${packageName}: Created .github/${fileName}\x1b[0m`)
