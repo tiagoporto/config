@@ -24,7 +24,9 @@
   "files": [
     "dependabot-conventional.yml",
     "dependabot.yml",
-    "index.mjs"
+    "index.mjs",
+    "saveFile.mjs",
+    "semantic.yml"
   ],
   "scripts": {
     "postinstall": "node ./index.mjs",
