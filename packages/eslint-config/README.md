@@ -34,29 +34,22 @@ import globals from 'globals'
 export default [{ languageOptions: { globals: globals.node } }]
 ```
 
-### base config
-
-Lint `js`,`mjs`,`cjs`, `jsx`, `json`, `jsonc` and `json5` files
+### config
 
 ```mjs
 // eslint.config.mjs
 import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [...tpConfig.configs.base]
+export default [...tpConfig.configs.flat]
 ```
 
-### typeScript config
+Linted files
 
-Lint all files from base with `ts`, `mts`, `cts` and `tsx` files
-
-```mjs
-// eslint.config.mjs
-import tpConfig from '@tiagoporto/eslint-config'
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [...tpConfig.configs.typeScript]
-```
+Javascript - `js`,`mjs`,`cjs`, `jsx`, `json`
+Json - `json`, `jsonc` and `json5`
+Markdown - `md`, `markdown` and `mdx`
+Typescript - `ts`, `mts`, `cts` and `tsx`
 
 In `package.json` add the following scripts:
 

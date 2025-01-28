@@ -1,11 +1,11 @@
 import eslintPluginImportX from 'eslint-plugin-import-x'
 import { plugins } from 'neostandard'
 
-import base, { baseConfig } from './base.config.mjs'
+import { baseConfig, javascriptConfig } from './javascript.mjs'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default plugins['typescript-eslint'].config(
-  base,
+export const typescriptConfig = plugins['typescript-eslint'].config(
+  javascriptConfig,
   {
     languageOptions: {
       ...baseConfig.languageOptions,

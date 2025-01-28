@@ -22,7 +22,7 @@
   "exports": "./index.mjs",
   "license": "MIT",
   "files": [
-    "configs/**",
+    "src/**",
     "index.mjs"
   ],
   "scripts": {
