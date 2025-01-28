@@ -1,4 +1,5 @@
 import eslintPluginImportX from 'eslint-plugin-import-x'
+import jsdoc from 'eslint-plugin-jsdoc'
 import { plugins } from 'neostandard'
 
 import { baseConfig, javascriptConfig } from './javascript.mjs'
@@ -18,6 +19,7 @@ export const typescriptConfig = plugins['typescript-eslint'].config(
     files: ['**/*.{ts,tsx,mts,cts}'],
     rules: {
       ...baseConfig.rules,
+      ...jsdoc.configs['flat/recommended-typescript'].rules,
       ...plugins['typescript-eslint'].configs.recommended[1].rules,
       ...plugins['typescript-eslint'].configs.recommended[2].rules,
     },
