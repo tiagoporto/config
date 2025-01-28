@@ -2,11 +2,10 @@ import eslintPluginImportX from 'eslint-plugin-import-x'
 import jsdoc from 'eslint-plugin-jsdoc'
 import { plugins } from 'neostandard'
 
-import { baseConfig, javascriptConfig } from './javascript.mjs'
+import { baseConfig } from './javascript.mjs'
 
 /** @type {import('eslint').Linter.Config[]} */
 export const typescriptConfig = plugins['typescript-eslint'].config(
-  javascriptConfig,
   {
     languageOptions: {
       ...baseConfig.languageOptions,
