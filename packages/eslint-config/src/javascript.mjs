@@ -62,7 +62,10 @@ export const baseConfig = {
     ...plugins.promise.configs['flat/recommended'].rules,
     ...comments.recommended.rules,
     ...jsdoc.configs['flat/recommended'].rules,
-    'no-secrets/no-secrets': 'error',
+    'no-secrets/no-secrets': [
+      'error',
+      { ignoreContent: ['123456789', 'ABCDEFGHI', '^https?:'] },
+    ],
   },
 }
 
