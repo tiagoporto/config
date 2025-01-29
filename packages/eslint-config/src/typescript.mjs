@@ -1,4 +1,4 @@
-import eslintPluginImportX from 'eslint-plugin-import-x'
+// import eslintPluginImportX from 'eslint-plugin-import-x'
 import jsdoc from 'eslint-plugin-jsdoc'
 import { plugins } from 'neostandard'
 
@@ -23,5 +23,5 @@ export const typescriptConfig = plugins['typescript-eslint'].config(
       ...plugins['typescript-eslint'].configs.recommended[2].rules,
     },
   },
-  eslintPluginImportX.flatConfigs.typescript,
+  // eslintPluginImportX.flatConfigs.typescript,
 )
