@@ -46,10 +46,10 @@ export default [...tpConfig.configs.flat]
 
 Linted files
 
-Javascript - `js`,`mjs`,`cjs`, `jsx`, `json`
+Javascript - `js`,`mjs`,`cjs` and `jsx`
 Json - `json`, `jsonc` and `json5`
-Markdown - `md`, `markdown` and `mdx`
-Typescript - `ts`, `mts`, `cts` and `tsx`
+Markdown - `md`, `markdown`, `mdx` and `code blocks`
+Typescript - `ts`and `tsx`
 
 In `package.json` add the following scripts:
 
