@@ -1,4 +1,4 @@
-import child_process from 'child_process'
+import childProcess from 'child_process'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -12,7 +12,7 @@ const source = path.join(__dirname, fileName)
 let gitRoot
 
 try {
-  gitRoot = child_process
+  gitRoot = childProcess
     .execSync('git rev-parse --show-toplevel')
     .toString()
     .trim()

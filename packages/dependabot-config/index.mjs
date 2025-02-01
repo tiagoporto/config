@@ -1,4 +1,4 @@
-import child_process from 'child_process'
+import childProcess from 'child_process'
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -13,7 +13,7 @@ let isUsingConventionalCommits = false
 let gitRoot
 
 try {
-  gitRoot = child_process
+  gitRoot = childProcess
     .execSync('git rev-parse --show-toplevel')
     .toString()
     .trim()
@@ -25,6 +25,7 @@ try {
 const installedPackages = JSON.parse(
   fs.readFileSync(path.join(gitRoot, 'package.json'), 'utf8'),
 )
+
 if (
   installedPackages.dependencies?.['@commitlint/config-conventional'] ||
   installedPackages.devDependencies?.['@commitlint/config-conventional']
