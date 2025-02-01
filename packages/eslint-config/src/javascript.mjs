@@ -77,9 +77,7 @@ export const javascriptConfig = [
   // JS files
   {
     files: ['**/*.{js,mjs,cjs,jsx}'],
-    languageOptions: {
-      ...neoConfig[1].languageOptions,
-    },
+    languageOptions: {},
     ...baseConfig,
   },
 ]
