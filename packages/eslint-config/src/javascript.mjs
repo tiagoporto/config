@@ -2,18 +2,21 @@ import js from '@eslint/js'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import jsdoc from 'eslint-plugin-jsdoc'
 import noSecrets from 'eslint-plugin-no-secrets'
-import { plugins } from 'neostandard'
+import neostandard, { plugins } from 'neostandard'
+
+const neoConfig = neostandard({ noStyle: true })
 
 export const baseConfig = {
-  languageOptions: {},
   plugins: {
+    // import-x, n, promise
+    ...neoConfig[1].plugins,
     'no-secrets': noSecrets,
-    ...plugins['import-x'].flatConfigs.recommended.plugins,
     ...comments.recommended.plugins,
     ...jsdoc.configs['flat/recommended'].plugins,
-    ...plugins.promise.configs['flat/recommended'].plugins,
   },
   rules: {
+    ...neoConfig[1].rules,
+    ...neoConfig[2].rules,
     ...js.configs.recommended.rules,
     'no-void': ['error', { allowAsStatement: true }],
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
@@ -72,5 +75,11 @@ export const baseConfig = {
 /** @type {import('eslint').Linter.Config[]} */
 export const javascriptConfig = [
   // JS files
-  { files: ['**/*.{js,mjs,cjs,jsx}'], ...baseConfig },
+  {
+    files: ['**/*.{js,mjs,cjs,jsx}'],
+    languageOptions: {
+      ...neoConfig[1].languageOptions,
+    },
+    ...baseConfig,
+  },
 ]
