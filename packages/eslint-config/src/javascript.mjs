@@ -38,8 +38,7 @@ export const baseConfig = {
       'warn',
       {
         groups: [
-          ['builtin', 'external'],
-          'internal',
+          ['builtin', 'external', 'internal'],
           'unknown',
           ['parent', 'sibling', 'index'],
           'object',
