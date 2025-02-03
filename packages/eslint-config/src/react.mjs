@@ -27,10 +27,15 @@ export const reactConfig = [
     },
     rules: {
       ...tsConfig.rules,
+      ...plugins.react.configs.flat.all.rules,
+      'react/jsx-indent': ['warn', 2],
+      'react/jsx-filename-extension': [
+        'warn',
+        { extensions: ['.jsx', '.tsx'] },
+      ],
+      ...plugins.react.configs.flat['jsx-runtime'].rules,
       //neostandard/jsx
       ...neoConfig[3].rules,
-      ...plugins.react.configs.flat.all.rules,
-      ...plugins.react.configs.flat['jsx-runtime'].rules,
       // jsx-a11y/recommended
       ...jsxA11y.flatConfigs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
