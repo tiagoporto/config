@@ -25,7 +25,7 @@ export const config = {
           },
           {
             type: 'refactor',
-            release: 'patch',
+            release: 'minor',
           },
         ],
       },
