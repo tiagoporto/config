@@ -34,7 +34,16 @@ import globals from 'globals'
 export default [{ languageOptions: { globals: globals.node } }]
 ```
 
-### config
+### configs
+
+#### base
+
+Linted files
+
+- **Json** - `json`, `jsonc` and `json5`
+- **Markdown** - `md`, `markdown`, `mdx` and `code blocks`
+- **Javascript** - `js`,`mjs` and `cjs`
+- **Typescript** - `ts`,`mts` and `cts`
 
 ```mjs
 // eslint.config.mjs
@@ -44,12 +53,19 @@ import tpConfig from '@tiagoporto/eslint-config'
 export default [...tpConfig.configs.flat]
 ```
 
+#### react
+
 Linted files
 
-Javascript - `js`,`mjs`,`cjs` and `jsx`
-Json - `json`, `jsonc` and `json5`
-Markdown - `md`, `markdown`, `mdx` and `code blocks`
-Typescript - `ts`and `tsx`
+All from base config plus **JavaScript XML** - `jsx` and `tsx`
+
+```mjs
+// eslint.config.mjs
+import tpConfig from '@tiagoporto/eslint-config'
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...tpConfig.configs.react]
+```
 
 In `package.json` add the following scripts:
 

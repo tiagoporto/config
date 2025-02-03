@@ -10,5 +10,5 @@ export default [
       ecmaVersion: 'latest',
     },
   },
-  ...tpConfig.configs.flat,
+  ...tpConfig.configs.base,
 ]
