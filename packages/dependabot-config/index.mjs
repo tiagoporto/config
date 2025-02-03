@@ -1,5 +1,6 @@
 import childProcess from 'child_process'
 import fs from 'fs'
+import { exit } from 'node:process'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -19,8 +20,9 @@ try {
     .trim()
 } catch {
   console.error(`\x1b[0;31m${packageName}: Could not get root path\x1b[0m`)
-  process.exit(0)
+  exit()
 }
+
 // check if uses conventional commits
 const installedPackages = JSON.parse(
   fs.readFileSync(path.join(gitRoot, 'package.json'), 'utf8'),
