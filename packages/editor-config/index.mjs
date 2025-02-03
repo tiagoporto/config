@@ -1,5 +1,6 @@
 import childProcess from 'child_process'
 import fs from 'fs'
+import { exit } from 'node:process'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -18,13 +19,13 @@ try {
     .trim()
 } catch {
   console.error(`\x1b[0;31m${packageName}: Could not get root path\x1b[0m`)
-  process.exit(0)
+  exit()
 }
 
 const dest = path.join(gitRoot, fileName)
 
 if (source === dest) {
-  process.exit(0)
+  exit()
 }
 
 if (fs.existsSync(dest)) {
