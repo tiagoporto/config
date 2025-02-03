@@ -42,6 +42,7 @@ export const markdownConfig = [
       'no-console': 'off',
       'no-alert': 'off',
       'no-debugger': 'off',
+      'n/no-extraneous-import': 'off',
     },
   },
 ]

@@ -15,6 +15,8 @@ export const baseConfig = {
     ...jsdoc.configs['flat/recommended'].plugins,
   },
   rules: {
+    // 'node/flat/recommended-module'
+    ...plugins.n.configs['flat/recommended'].rules,
     // neostandard/base
     ...neoConfig[0].rules,
     // neostandard/modernization-since-standard-17
