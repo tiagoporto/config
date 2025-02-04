@@ -17,6 +17,13 @@ export const baseConfig = {
   rules: {
     // 'node/flat/recommended-module'
     ...plugins.n.configs['flat/recommended'].rules,
+    'n/no-missing-import': 'off',
+    'n/no-unsupported-features/node-builtins': [
+      'error',
+      {
+        allowExperimental: true,
+      },
+    ],
     // neostandard/base
     ...neoConfig[0].rules,
     // neostandard/modernization-since-standard-17

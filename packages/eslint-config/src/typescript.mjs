@@ -20,6 +20,7 @@ export const tsConfig = {
   },
   rules: {
     ...baseConfig.rules,
+    'n/no-unpublished-import': 'off',
     // typescript-eslint/eslint-recommended
     ...plugins['typescript-eslint'].configs.recommended[1].rules,
     // typescript-eslint/recommended
