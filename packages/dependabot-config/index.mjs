@@ -1,10 +1,10 @@
-import childProcess from 'child_process'
-import fs from 'fs'
+import childProcess from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
 import { exit } from 'node:process'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 
-import { saveFile } from './saveFile.mjs'
+import { saveFile } from './save-file.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const jsonData = fs.readFileSync('./package.json', 'utf8')
@@ -19,7 +19,7 @@ try {
     .toString()
     .trim()
 } catch {
-  console.error(`\x1b[0;31m${packageName}: Could not get root path\x1b[0m`)
+  console.error(`\u001B[0;31m${packageName}: Could not get root path\u001B[0m`)
   exit()
 }
 
@@ -39,10 +39,10 @@ const dependabotFileName = isUsingConventionalCommits
   ? 'dependabot-conventional.yml'
   : 'dependabot.yml'
 const dependabotSource = path.join(__dirname, dependabotFileName)
-const dependabotDest = path.join(gitRoot, '.github', fileName)
+const dependabotDestination = path.join(gitRoot, '.github', fileName)
 
 saveFile({
-  dest: dependabotDest,
+  dest: dependabotDestination,
   source: dependabotSource,
   fileName: `.github/${dependabotFileName}`,
 })
@@ -50,10 +50,10 @@ saveFile({
 if (isUsingConventionalCommits) {
   const semanticFileName = 'semantic.yml'
   const semanticSource = path.join(__dirname, semanticFileName)
-  const semanticDest = path.join(gitRoot, '.github', semanticFileName)
+  const semanticDestination = path.join(gitRoot, '.github', semanticFileName)
 
   saveFile({
-    dest: semanticDest,
+    dest: semanticDestination,
     source: semanticSource,
     fileName: `.github/${semanticFileName}`,
   })

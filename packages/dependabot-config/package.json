@@ -25,7 +25,7 @@
     "dependabot-conventional.yml",
     "dependabot.yml",
     "index.mjs",
-    "saveFile.mjs",
+    "save-file.mjs",
     "semantic.yml"
   ],
   "scripts": {
