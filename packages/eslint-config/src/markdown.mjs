@@ -43,6 +43,8 @@ export const markdownConfig = [
       'no-alert': 'off',
       'no-debugger': 'off',
       'n/no-extraneous-import': 'off',
+      'unicorn/filename-case': 'off',
+      'unicorn/prefer-export-from': 'off',
     },
   },
 ]

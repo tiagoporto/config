@@ -2,6 +2,7 @@ import js from '@eslint/js'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import jsdoc from 'eslint-plugin-jsdoc'
 import noSecrets from 'eslint-plugin-no-secrets'
+import unicorn from 'eslint-plugin-unicorn'
 import neostandard, { plugins } from 'neostandard'
 
 const neoConfig = neostandard({ noStyle: true, noJsx: true })
@@ -13,6 +14,7 @@ export const baseConfig = {
     'no-secrets': noSecrets,
     ...comments.recommended.plugins,
     ...jsdoc.configs['flat/recommended'].plugins,
+    unicorn,
   },
   rules: {
     // 'node/flat/recommended-module'
@@ -22,6 +24,21 @@ export const baseConfig = {
       'error',
       {
         allowExperimental: true,
+      },
+    ],
+    ...unicorn.configs.recommended.rules,
+    'unicorn/prevent-abbreviations': [
+      'warn',
+      {
+        checkFilenames: false,
+        replacements: {
+          params: false,
+          prod: false,
+          dev: false,
+          i: false,
+          props: false,
+          pkg: false,
+        },
       },
     ],
     // neostandard/base
@@ -87,6 +104,10 @@ export const baseConfig = {
   },
 }
 
+export const testRules = {
+  'unicorn/no-null': 'off',
+}
+
 /** @type {import('eslint').Linter.Config[]} */
 export const javascriptConfig = [
   // JS files
@@ -94,5 +115,11 @@ export const javascriptConfig = [
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {},
     ...baseConfig,
+  },
+  {
+    files: ['**/*.{test,spec}.{js,mjs,cjs}'],
+    rules: {
+      ...testRules,
+    },
   },
 ]

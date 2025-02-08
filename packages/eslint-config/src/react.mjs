@@ -2,6 +2,7 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import reactHooks from 'eslint-plugin-react-hooks'
 import neostandard, { plugins } from 'neostandard'
 
+import { testRules } from './javascript.mjs'
 import { tsConfig } from './typescript.mjs'
 
 const neoConfig = neostandard({ noStyle: true, ts: true })
@@ -34,6 +35,18 @@ export const reactConfig = [
       // jsx-a11y/recommended
       ...jsxA11y.flatConfigs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
+      'unicorn/filename-case': [
+        'error',
+        {
+          case: 'pascalCase',
+        },
+      ],
+    },
+  },
+  {
+    files: ['**/*.{test,spec}.{jsx,tsx}'],
+    rules: {
+      ...testRules,
     },
   },
 ]

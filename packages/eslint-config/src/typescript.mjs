@@ -1,7 +1,7 @@
 import jsdoc from 'eslint-plugin-jsdoc'
 import neostandard, { plugins } from 'neostandard'
 
-import { baseConfig } from './javascript.mjs'
+import { baseConfig, testRules } from './javascript.mjs'
 
 const neoConfig = neostandard({ noStyle: true, ts: true, noJsx: true })
 
@@ -34,7 +34,15 @@ export const tsConfig = {
 }
 
 /** @type {import('eslint').Linter.Config[]} */
-export const typescriptConfig = plugins['typescript-eslint'].config({
-  files: ['**/*.{ts,mts,cts}'],
-  ...tsConfig,
-})
+export const typescriptConfig = plugins['typescript-eslint'].config(
+  {
+    files: ['**/*.{ts,mts,cts}'],
+    ...tsConfig,
+  },
+  {
+    files: ['**/*.{test,spec}.{ts,mts,cts}'],
+    rules: {
+      ...testRules,
+    },
+  },
+)

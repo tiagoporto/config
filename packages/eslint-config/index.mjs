@@ -1,4 +1,4 @@
-import fs from 'fs'
+import fs from 'node:fs'
 
 import { javascriptConfig } from './src/javascript.mjs'
 import { jsonConfig } from './src/json.mjs'
