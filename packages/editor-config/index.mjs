@@ -1,8 +1,8 @@
-import childProcess from 'child_process'
-import fs from 'fs'
+import childProcess from 'node:child_process'
+import fs from 'node:fs'
+import path from 'node:path'
 import { exit } from 'node:process'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import { fileURLToPath } from 'node:url'
 
 const jsonData = fs.readFileSync('./package.json', 'utf8')
 const { name: packageName } = JSON.parse(jsonData)
@@ -18,24 +18,26 @@ try {
     .toString()
     .trim()
 } catch {
-  console.error(`\x1b[0;31m${packageName}: Could not get root path\x1b[0m`)
+  console.error(`\u001B[0;31m${packageName}: Could not get root path\u001B[0m`)
   exit()
 }
 
-const dest = path.join(gitRoot, fileName)
+const destination = path.join(gitRoot, fileName)
 
-if (source === dest) {
+if (source === destination) {
   exit()
 }
 
-if (fs.existsSync(dest)) {
-  fs.unlinkSync(dest)
+if (fs.existsSync(destination)) {
+  fs.unlinkSync(destination)
 
-  console.warn(`\x1b[0;33m${packageName}: Deleted existing ${fileName}\x1b[0m`)
+  console.warn(
+    `\u001B[0;33m${packageName}: Deleted existing ${fileName}\u001B[0m`,
+  )
 }
 
 const data = fs.readFileSync(source)
 
-fs.writeFileSync(dest, data, { mode: 0o444 })
+fs.writeFileSync(destination, data, { mode: 0o444 })
 
-console.info(`\x1b[0;32m${packageName}: Created ${fileName}\x1b[0m`)
+console.info(`\u001B[0;32m${packageName}: Created ${fileName}\u001B[0m`)

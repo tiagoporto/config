@@ -1,3 +1,1 @@
-import { config } from '../../release.config.mjs'
-
-export default config
+export { config as default } from '../../release.config.mjs'
