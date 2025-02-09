@@ -1,6 +1,7 @@
 name: Checks
 
 on:
+  # eslint-disable-next-line yml/no-empty-mapping-value
   workflow_call:
   push:
     branches: [main]
@@ -23,8 +24,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           # Use for testing esm modules support
-          node-version: '18.x'
-          cache: 'npm'
+          node-version: 18.x
+          cache: npm
 
       - name: Install Dependencies
         run: npm ci --ignore-scripts
