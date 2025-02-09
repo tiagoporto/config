@@ -17,7 +17,7 @@ Check TypeScript files
 ```mjs
 // .lintstagedrc.mjs
 export default {
-  '*.{ts,tsx}': () => 'tsc'
+  '*.{ts,tsx}': () => 'tsc --project tsconfig.json'
 }
 ```
 
