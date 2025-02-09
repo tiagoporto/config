@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/config-conventional": "^19.7.1",
     "@tiagoporto/dependabot-config": "^1.0.0",
     "@tiagoporto/editor-config": "^1.0.0",
     "@tiagoporto/eslint-config": "^1.0.0",
