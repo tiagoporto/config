@@ -40,6 +40,7 @@ export default [{ languageOptions: { globals: globals.node } }]
 
 Linted files
 
+- **HTML** - `html` and code into `script` tag
 - **YAML** - `yml`, and `yaml`
 - **Json** - `json`, `jsonc` and `json5`
 - **Markdown** - `md`, `markdown`, `mdx` and `code blocks`
@@ -86,8 +87,15 @@ Check staged files
 ```mjs
 // .lintstagedrc.mjs
 export default {
-  '*.{md,markdown,mdx}': 'eslint --max-warnings 0',
-  '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': 'eslint --max-warnings 0'
+  '*.{md,markdown,mdx}': [
+    // remark,
+    'eslint --max-warnings 0'
+  ],
+  '*.{html,yml,json,jsonc,json5}': 'eslint --max-warnings 0',
+  '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': [
+    'eslint --max-warnings 0'
+    // unit test
+  ]
 }
 ```
 

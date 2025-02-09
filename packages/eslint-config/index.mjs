@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 
+import { htmlConfig } from './src/html.mjs'
 import { javascriptConfig } from './src/javascript.mjs'
 import { jsonConfig } from './src/json.mjs'
 import { markdownConfig } from './src/markdown.mjs'
@@ -17,6 +18,7 @@ export default {
   },
   configs: {
     base: [
+      ...htmlConfig,
       ...javascriptConfig,
       ...jsonConfig,
       ...markdownConfig,
@@ -24,6 +26,7 @@ export default {
       ...ymlConfig,
     ],
     react: [
+      ...htmlConfig,
       ...javascriptConfig,
       ...jsonConfig,
       ...markdownConfig,
