@@ -89,11 +89,11 @@ Check staged files
 export default {
   '*.{md,markdown,mdx}': [
     // remark,
-    'eslint --max-warnings 0'
+    'eslint --max-warnings 0 --no-warn-ignored'
   ],
-  '*.{html,yml,json,jsonc,json5}': 'eslint --max-warnings 0',
+  '*.{html,yml,json,jsonc,json5}': 'eslint --max-warnings 0 --no-warn-ignored',
   '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': [
-    'eslint --max-warnings 0'
+    'eslint --max-warnings 0 --no-warn-ignored'
     // unit test
   ]
 }
