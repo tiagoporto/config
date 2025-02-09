@@ -40,6 +40,7 @@ export default [{ languageOptions: { globals: globals.node } }]
 
 Linted files
 
+- **YAML** - `yml`, and `yaml`
 - **Json** - `json`, `jsonc` and `json5`
 - **Markdown** - `md`, `markdown`, `mdx` and `code blocks`
 - **Javascript** - `js`,`mjs` and `cjs`
@@ -102,6 +103,7 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "eslint.validate": ["yaml", "github-actions-workflow"]
 }
 ```

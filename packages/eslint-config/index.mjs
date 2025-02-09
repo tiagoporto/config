@@ -5,6 +5,7 @@ import { jsonConfig } from './src/json.mjs'
 import { markdownConfig } from './src/markdown.mjs'
 import { reactConfig } from './src/react.mjs'
 import { typescriptConfig } from './src/typescript.mjs'
+import { ymlConfig } from './src/yml.mjs'
 
 const jsonData = fs.readFileSync('./package.json', 'utf8')
 const { name, version } = JSON.parse(jsonData)
@@ -20,13 +21,15 @@ export default {
       ...jsonConfig,
       ...markdownConfig,
       ...typescriptConfig,
+      ...ymlConfig,
     ],
     react: [
       ...javascriptConfig,
       ...jsonConfig,
       ...markdownConfig,
-      ...typescriptConfig,
       ...reactConfig,
+      ...typescriptConfig,
+      ...ymlConfig,
     ],
   },
 }
