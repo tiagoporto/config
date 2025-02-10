@@ -52,7 +52,7 @@ Linted files
 import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [...tpConfig.configs.flat]
+export default [...tpConfig.configs.base]
 ```
 
 #### react
