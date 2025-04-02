@@ -25,7 +25,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.mjs"
+    "index.mjs",
+    "mdx.mjs"
   ],
   "scripts": {
     "release": "npx semantic-release",
