@@ -27,6 +27,8 @@ export const baseConfig = {
       },
     ],
     ...unicorn.configs.recommended.rules,
+    'unicorn/no-empty-file': 'off',
+    'unicorn/no-abusive-eslint-disable': 'off',
     'unicorn/prevent-abbreviations': [
       'warn',
       {
