@@ -45,6 +45,11 @@ export const markdownConfig = [
       'n/no-extraneous-import': 'off',
       'unicorn/filename-case': 'off',
       'unicorn/prefer-export-from': 'off',
+      '@html-eslint/require-lang': 'off',
+      '@html-eslint/require-doctype': 'off',
+      '@html-eslint/require-title': 'off',
+      '@html-eslint/require-meta-description': 'off',
+      '@html-eslint/require-open-graph-protocol': 'off',
     },
   },
 ]
