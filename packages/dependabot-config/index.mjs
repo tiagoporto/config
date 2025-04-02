@@ -39,9 +39,11 @@ const dependabotFileName = isUsingConventionalCommits
   ? 'dependabot-conventional.yml'
   : 'dependabot.yml'
 const dependabotSource = path.join(__dirname, dependabotFileName)
-const dependabotDestination = path.join(gitRoot, '.github', fileName)
+const githubDestinationFolder = path.join(gitRoot, '.github')
+const dependabotDestination = path.join(githubDestinationFolder, fileName)
 
 saveFile({
+  githubDestinationFolder,
   dest: dependabotDestination,
   source: dependabotSource,
   fileName: `.github/${dependabotFileName}`,
@@ -50,9 +52,13 @@ saveFile({
 if (isUsingConventionalCommits) {
   const semanticFileName = 'semantic.yml'
   const semanticSource = path.join(__dirname, semanticFileName)
-  const semanticDestination = path.join(gitRoot, '.github', semanticFileName)
+  const semanticDestination = path.join(
+    githubDestinationFolder,
+    semanticFileName,
+  )
 
   saveFile({
+    githubDestinationFolder,
     dest: semanticDestination,
     source: semanticSource,
     fileName: `.github/${semanticFileName}`,
