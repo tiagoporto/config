@@ -1,4 +1,5 @@
 import remarkEmoji from 'remark-emoji'
+import remarkFrontmatter from 'remark-frontmatter'
 import remarkGFM from 'remark-gfm'
 import remarkLintNoDeadUrls from 'remark-lint-no-dead-urls'
 import remarkLintNoUrlTrailingSlash from 'remark-lint-no-url-trailing-slash'
@@ -22,6 +23,7 @@ export default {
   },
   plugins: [
     remarkGFM,
+    [remarkFrontmatter, ['yaml', 'toml']],
     remarkEmoji,
     remarkLintConsistent,
     remarkLintRecommended,
