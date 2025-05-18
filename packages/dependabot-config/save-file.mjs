@@ -1,7 +1,6 @@
 import fs from 'node:fs'
 
-const jsonData = fs.readFileSync('./package.json', 'utf8')
-const { name: packageName } = JSON.parse(jsonData)
+import pkg from './package.json' with { type: 'json' }
 
 export const saveFile = ({
   dest,
@@ -17,11 +16,11 @@ export const saveFile = ({
     fs.unlinkSync(dest)
 
     console.warn(
-      `\u001B[0;33m${packageName}: Deleted existing ${fileName}\u001B[0m`,
+      `\u001B[0;33m[${pkg.name}] Deleted existing ${fileName}\u001B[0m`,
     )
   }
 
   const data = fs.readFileSync(source)
   fs.writeFileSync(dest, data, { mode: 0o444 })
-  console.info(`\u001B[0;32m${packageName}: Created ${fileName}\u001B[0m`)
+  console.info(`\u001B[0;32m[${pkg.name}] Created ${fileName}\u001B[0m`)
 }

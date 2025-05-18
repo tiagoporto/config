@@ -16,7 +16,7 @@
     "config"
   ],
   "engines": {
-    "node": ">=18"
+    "node": ">=22"
   },
   "type": "module",
   "exports": "./index.mjs",
@@ -28,8 +28,10 @@
     "save-file.mjs",
     "semantic.yml"
   ],
+  "bin": {
+    "dependabot-config": "index.mjs"
+  },
   "scripts": {
-    "postinstall": "node ./index.mjs",
     "release": "npx semantic-release",
     "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
   }

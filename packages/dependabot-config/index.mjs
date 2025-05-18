@@ -1,17 +1,20 @@
+#!/usr/bin/env node
+
 import childProcess from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 import { exit } from 'node:process'
 import { fileURLToPath } from 'node:url'
 
+import pkg from './package.json' with { type: 'json' }
 import { saveFile } from './save-file.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
-const jsonData = fs.readFileSync('./package.json', 'utf8')
-const { name: packageName } = JSON.parse(jsonData)
 const fileName = 'dependabot.yml'
 let isUsingConventionalCommits = false
 let gitRoot
+
+console.info(`[${pkg.name}] Running...`)
 
 try {
   gitRoot = childProcess
@@ -19,7 +22,7 @@ try {
     .toString()
     .trim()
 } catch {
-  console.error(`\u001B[0;31m${packageName}: Could not get root path\u001B[0m`)
+  console.error(`\u001B[0;31m[${pkg.name}] Could not get root path\u001B[0m`)
   exit()
 }
 
@@ -64,3 +67,5 @@ if (isUsingConventionalCommits) {
     fileName: `.github/${semanticFileName}`,
   })
 }
+
+console.info(`\r`)
