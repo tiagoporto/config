@@ -8,7 +8,18 @@
 npm install --save-dev @tiagoporto/editor-config
 ```
 
-> After install an `.editorconfig` file will be added to the root of your project.
+## Usage
+
+```jsonc
+// package.json
+{
+  "scripts": {
+    "postinstall": "editor-config"
+  }
+}
+```
+
+> After npm install an `.editorconfig` file will be added/updated.
 
 ## Editor
 
