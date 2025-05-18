@@ -7,6 +7,7 @@
     "packages/*"
   ],
   "scripts": {
+    "postinstall": "dependabot-config && editor-config",
     "prepare": "husky",
     "checks": "npm run check-docs && npm run format:check && npm run lint",
     "check-docs": "remark --frail . --ext md,markdown,mdx",
