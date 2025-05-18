@@ -35,7 +35,7 @@
   "dependencies": {
     "remark-emoji": "^5.0.1",
     "remark-frontmatter": "^5.0.0",
-    "remark-gfm": "^4.0.0",
+    "remark-gfm": "^4.0.1",
     "remark-lint-no-dead-urls": "^2.0.1",
     "remark-lint-no-url-trailing-slash": "^3.0.1",
     "remark-mdx": "^3.1.0",
