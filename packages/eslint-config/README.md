@@ -75,7 +75,7 @@ In `package.json` add the following scripts:
 {
   "scripts": {
     "lint": "eslint --max-warnings 0",
-    "lint:fix": "npm run lint -- --write"
+    "lint:fix": "npm run lint -- --fix"
   }
 }
 ```
