@@ -6,6 +6,8 @@ jobs:
   checks:
     uses: ./.github/workflows/checks.yml
     secrets: inherit
+    permissions:
+      contents: read
 
   release:
     runs-on: ubuntu-latest
