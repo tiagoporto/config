@@ -1,4 +1,4 @@
-export const config = {
+const config = {
   extends: 'semantic-release-monorepo',
   branches: [
     'main',
@@ -32,6 +32,11 @@ export const config = {
     ],
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
-    '@semantic-release/github',
   ],
 }
+
+if (process.env.BRANCH === 'main') {
+  config.plugins.push('@semantic-release/github')
+}
+
+export default config
