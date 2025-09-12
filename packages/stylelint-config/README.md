@@ -55,3 +55,7 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
   "stylelint.validate": ["css", "scss"]
 }
 ```
+
+## License
+
+@tiagoporto/stylelint-config © 2025 by Tiago Porto is licensed under [MIT License](LICENSE).
