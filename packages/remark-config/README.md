@@ -69,3 +69,7 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
 
 - [remark](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-remark)
 - [mdx](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx)
+
+## License
+
+@tiagoporto/remark-config © 2024 by Tiago Porto is licensed under [MIT License](LICENSE).
