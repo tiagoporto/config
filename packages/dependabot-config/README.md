@@ -28,3 +28,7 @@ If project uses conventional commits, a [`.github/semantic.yml`](https://github.
 ## Github
 
 Add `dependencies` label in repository
+
+## License
+
+@tiagoporto/dependabot-config © 2025 by Tiago Porto is licensed under [MIT License](LICENSE).
