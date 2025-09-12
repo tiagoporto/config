@@ -1,5 +1,6 @@
 import js from '@eslint/js'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
+// eslint-disable-next-line import-x/no-named-as-default
 import jsdoc from 'eslint-plugin-jsdoc'
 import noSecrets from 'eslint-plugin-no-secrets'
 import unicorn from 'eslint-plugin-unicorn'
@@ -99,6 +100,7 @@ export const baseConfig = {
     ...comments.recommended.rules,
     // jsdoc/flat/recommended
     ...jsdoc.configs['flat/recommended'].rules,
+    'jsdoc/require-jsdoc': ['off'],
     'no-secrets/no-secrets': [
       'error',
       { ignoreContent: ['123456789', 'ABCDEFGHI', '^https?:'] },

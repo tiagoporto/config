@@ -1,3 +1,4 @@
+// eslint-disable-next-line import-x/no-named-as-default
 import jsdoc from 'eslint-plugin-jsdoc'
 import neostandard, { plugins } from 'neostandard'
 
@@ -30,6 +31,7 @@ export const tsConfig = {
     ...plugins['import-x'].flatConfigs.typescript.rules,
     // jsdoc/flat/recommended-typescript
     ...jsdoc.configs['flat/recommended-typescript'].rules,
+    'jsdoc/require-jsdoc': ['off'],
   },
 }
 
