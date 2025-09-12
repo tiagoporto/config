@@ -26,3 +26,7 @@ npm install --save-dev @tiagoporto/editor-config
 For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
 
 - [editorconfig](https://marketplace.visualstudio.com/items?itemName=editorconfig.editorconfig)
+
+## License
+
+@tiagoporto/editor-config © 2025 by Tiago Porto is licensed under [MIT License](LICENSE).
