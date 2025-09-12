@@ -14,7 +14,7 @@ npm install --save-dev @tiagoporto/editor-config
 // package.json
 {
   "scripts": {
-    "postinstall": "editor-config"
+    "postinstall": "$CI = true || editor-config"
   }
 }
 ```
