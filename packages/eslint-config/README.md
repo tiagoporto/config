@@ -115,3 +115,7 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
   "eslint.validate": ["yaml", "github-actions-workflow"]
 }
 ```
+
+## License
+
+@tiagoporto/eslint-config © 2025 by Tiago Porto is licensed under [MIT License](LICENSE).
