@@ -112,7 +112,20 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "eslint.validate": ["yaml", "github-actions-workflow"]
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "mdx",
+    "vue",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "github-actions-workflow"
+  ]
 }
 ```
 
