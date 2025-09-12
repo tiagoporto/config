@@ -20,14 +20,22 @@ export const jsonConfig = [
   // JSON files
   {
     files: ['**/*.json'],
-    ignores: ['package-lock.json', '.vscode/*', '**/tsconfig.json'],
+    ignores: ['package-lock.json'],
     language: 'json/json',
     ...config,
   },
 
+  // .tsconfig.json and .vscode files
+  {
+    files: ['**/tsconfig.json', '.vscode/**/*.json'],
+    language: 'json/jsonc',
+    plugins: { ...config.plugins },
+    rules: { ...config.rules, 'no-secrets/no-secrets': 'off' },
+  },
+
   // JSONC files
   {
-    files: ['**/*.jsonc', '.vscode/**/*.json', '**/tsconfig.json'],
+    files: ['**/*.jsonc'],
     language: 'json/jsonc',
     ...config,
   },
