@@ -31,3 +31,7 @@ Set the TypeScript SDK to workspace
   "typescript.tsdk": "node_modules/typescript/lib"
 }
 ```
+
+## License
+
+@tiagoporto/ts-config © 2025 by Tiago Porto is licensed under [MIT License](LICENSE).
