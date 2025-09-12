@@ -52,3 +52,7 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
   "editor.formatOnSave": true
 }
 ```
+
+## License
+
+@tiagoporto/prettier-config © 2024 by Tiago Porto is licensed under [MIT License](LICENSE).
