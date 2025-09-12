@@ -14,7 +14,7 @@ npm install --save-dev @tiagoporto/dependabot-config
 // package.json
 {
   "scripts": {
-    "postinstall": "dependabot-config"
+    "postinstall": "$CI = true || dependabot-config"
   }
 }
 ```
