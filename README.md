@@ -1,6 +1,8 @@
 # Config
 
-My shareable configs:
+My shareable configs
+
+## 📦 Packages
 
 - [dependabot-config](./packages/dependabot-config/README.md)
 - [editor-config](./packages/editor-config/README.md)
@@ -14,7 +16,40 @@ My shareable configs:
 - [postcss-config]()
  -->
 
-## Stack 🧰
+### @tiagoporto/dependabot-config
 
-![Conventional Commits](https://img.shields.io/badge/conventional%20commits-%23FE5196.svg?style=for-the-badge&logo=conventionalcommits&logoColor=white)
-![Semantic Release](https://img.shields.io/badge/semantic%20release-%23494949.svg?style=for-the-badge&logo=semanticrelease)
+[![version](https://img.shields.io/npm/v/@tiagoporto/dependabot-config?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/dependabot-config)
+[![Downloads](https://img.shields.io/npm/dm/@tiagoporto/dependabot-config.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/dependabot-config)
+
+### @tiagoporto/editor-config
+
+[![version](https://img.shields.io/npm/v/@tiagoporto/editor-config?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/editor-config)
+[![Downloads](https://img.shields.io/npm/dm/@tiagoporto/editor-config.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/editor-config)
+
+### @tiagoporto/eslint-config
+
+[![version](https://img.shields.io/npm/v/@tiagoporto/eslint-config?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/eslint-config)
+[![Downloads](https://img.shields.io/npm/dm/@tiagoporto/eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/eslint-config)
+
+### @tiagoporto/prettier-config
+
+[![version](https://img.shields.io/npm/v/@tiagoporto/prettier-config?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/prettier-config)
+[![Downloads](https://img.shields.io/npm/dm/@tiagoporto/prettier-config.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/prettier-config)
+
+### @tiagoporto/remark-config
+
+[![version](https://img.shields.io/npm/v/@tiagoporto/remark-config?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/remark-config)
+[![Downloads](https://img.shields.io/npm/dm/@tiagoporto/remark-config.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/remark-config)
+
+### @tiagoporto/stylelint-config
+
+[![version](https://img.shields.io/npm/v/@tiagoporto/stylelint-config?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/stylelint-config)
+[![Downloads](https://img.shields.io/npm/dm/@tiagoporto/stylelint-config.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/stylelint-config)
+
+## 🤝 Contributing
+
+[Check how to contribute](https://github.com/tiagoporto/.github/blob/main/CONTRIBUTING.md).
+
+## 📄 License
+
+This project is licensed under the [MIT license](LICENSE).
