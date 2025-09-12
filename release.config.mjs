@@ -15,21 +15,7 @@ const config = {
   ],
   preset: 'conventionalcommits',
   plugins: [
-    [
-      '@semantic-release/commit-analyzer',
-      {
-        releaseRules: [
-          {
-            type: 'docs',
-            release: 'patch',
-          },
-          {
-            type: 'refactor',
-            release: 'minor',
-          },
-        ],
-      },
-    ],
+    '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/npm',
   ],
