@@ -15,9 +15,7 @@
     "format:check": "prettier --check --ignore-unknown \"**/*\"",
     "format": "npm run format:check -- --write",
     "lint": "eslint --max-warnings 0",
-    "lint:fix": "npm run lint -- --write",
-    "release": "npm run release --workspaces",
-    "release:dry-run": "npm run release:dry-run --workspaces"
+    "lint:fix": "npm run lint -- --write"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.7.1",
