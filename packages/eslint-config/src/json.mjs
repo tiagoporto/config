@@ -25,6 +25,14 @@ export const jsonConfig = [
     ...config,
   },
 
+  // package.json
+  {
+    files: ['package.json'],
+    language: 'json/json',
+    plugins: { ...config.plugins },
+    rules: { ...config.rules, 'no-secrets/no-secrets': 'off' },
+  },
+
   // .tsconfig.json and .vscode files
   {
     files: ['**/tsconfig.json', '.vscode/**/*.json'],
