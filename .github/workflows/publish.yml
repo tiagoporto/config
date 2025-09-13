@@ -37,6 +37,7 @@ jobs:
 
       - name: Bump versions, add tags, publish packages and create github releases
         env:
+          BRANCH: ${{github.ref_name}}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
           NPM_CONFIG_PROVENANCE: true

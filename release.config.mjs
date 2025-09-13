@@ -21,6 +21,7 @@ const config = {
   ],
 }
 
+// NOTE: add BRANCH env in the workflow
 if (process.env.BRANCH === 'main') {
   config.plugins.push('@semantic-release/github')
 }
