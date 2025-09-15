@@ -36,6 +36,12 @@ export const htmlConfig = [
       '@html-eslint/lowercase': 'error',
       '@html-eslint/no-extra-spacing-attrs': 'off',
       '@html-eslint/attrs-newline': 'off',
+      '@html-eslint/use-baseline': [
+        'error',
+        {
+          available: 2021,
+        },
+      ],
     },
   },
 ]
