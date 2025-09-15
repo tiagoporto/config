@@ -2,6 +2,7 @@ import js from '@eslint/js'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 // eslint-disable-next-line import-x/no-named-as-default
 import jsdoc from 'eslint-plugin-jsdoc'
+import nodePlugin from 'eslint-plugin-n'
 import noSecrets from 'eslint-plugin-no-secrets'
 import unicorn from 'eslint-plugin-unicorn'
 import neostandard, { plugins } from 'neostandard'
@@ -18,15 +19,6 @@ export const baseConfig = {
     unicorn,
   },
   rules: {
-    // 'node/flat/recommended-module'
-    ...plugins.n.configs['flat/recommended'].rules,
-    'n/no-missing-import': 'off',
-    'n/no-unsupported-features/node-builtins': [
-      'error',
-      {
-        allowExperimental: true,
-      },
-    ],
     ...unicorn.configs.recommended.rules,
     'unicorn/no-empty-file': 'off',
     'unicorn/no-abusive-eslint-disable': 'off',
@@ -120,6 +112,22 @@ export const javascriptConfig = [
     languageOptions: {},
     ...baseConfig,
   },
+  // Node
+  {
+    files: ['**/*.{mjs}'],
+    ...nodePlugin.configs['flat/recommended-module'],
+    rules: {
+      ...nodePlugin.configs['flat/recommended-module'].rules,
+    },
+  },
+  {
+    files: ['**/*.{cjs}'],
+    ...nodePlugin.configs['flat/recommended-script'],
+    rules: {
+      ...nodePlugin.configs['flat/recommended-script'].rules,
+    },
+  },
+  // Test files
   {
     files: ['**/*.{test,spec}.{js,mjs,cjs}'],
     rules: {
