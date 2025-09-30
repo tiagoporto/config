@@ -19,11 +19,7 @@ npm install --save-dev @tiagoporto/dependabot-config
 }
 ```
 
-> After npm install an `.github/dependabot.yml` file will be added/updated.
-
-## Semantic PRs
-
-If project uses conventional commits, a [`.github/semantic.yml`](https://github.com/Ezard/semantic-prs) file will be added too.
+After npm install an `.github/dependabot.yml` file will be added/updated.
 
 ## Github
 

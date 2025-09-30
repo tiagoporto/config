@@ -22,8 +22,7 @@
   "exports": "./index.mjs",
   "license": "MIT",
   "files": [
-    "dependabot-conventional.yml",
-    "dependabot.yml",
+    "assets/",
     "index.mjs",
     "save-file.mjs",
     "semantic.yml"
