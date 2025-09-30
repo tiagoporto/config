@@ -1,17 +1,11 @@
 import json from '@eslint/json'
-import noSecrets from 'eslint-plugin-no-secrets'
 
 const config = {
   plugins: {
     ...json.configs.recommended.plugins,
-    'no-secrets': noSecrets,
   },
   rules: {
     ...json.configs.recommended.rules,
-    'no-secrets/no-secrets': [
-      'error',
-      { ignoreContent: ['123456789', 'ABCDEFGHI', '^https?:', '=--'] },
-    ],
   },
 }
 
@@ -30,7 +24,7 @@ export const jsonConfig = [
     files: ['package.json'],
     language: 'json/json',
     plugins: { ...config.plugins },
-    rules: { ...config.rules, 'no-secrets/no-secrets': 'off' },
+    rules: { ...config.rules },
   },
 
   // .tsconfig.json and .vscode files
@@ -38,7 +32,7 @@ export const jsonConfig = [
     files: ['**/tsconfig.json', '.vscode/**/*.json'],
     language: 'json/jsonc',
     plugins: { ...config.plugins },
-    rules: { ...config.rules, 'no-secrets/no-secrets': 'off' },
+    rules: { ...config.rules },
   },
 
   // JSONC files

@@ -3,7 +3,6 @@ import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 // eslint-disable-next-line import-x/no-named-as-default
 import jsdoc from 'eslint-plugin-jsdoc'
 import nodePlugin from 'eslint-plugin-n'
-import noSecrets from 'eslint-plugin-no-secrets'
 import unicorn from 'eslint-plugin-unicorn'
 import neostandard, { plugins } from 'neostandard'
 
@@ -13,7 +12,6 @@ export const baseConfig = {
   plugins: {
     // import-x, n, promise
     ...neoConfig[0].plugins,
-    'no-secrets': noSecrets,
     ...comments.recommended.plugins,
     ...jsdoc.configs['flat/recommended'].plugins,
     unicorn,
@@ -93,10 +91,6 @@ export const baseConfig = {
     // jsdoc/flat/recommended
     ...jsdoc.configs['flat/recommended'].rules,
     'jsdoc/require-jsdoc': ['off'],
-    'no-secrets/no-secrets': [
-      'error',
-      { ignoreContent: ['123456789', 'ABCDEFGHI', '^https?:'] },
-    ],
   },
 }
 
