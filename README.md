@@ -7,6 +7,7 @@ My shareable configs
 - [dependabot-config](./packages/dependabot-config/README.md)
 - [editor-config](./packages/editor-config/README.md)
 - [eslint-config](./packages/eslint-config/README.md)
+- [github-files](./packages/github-files/README.md)
 - [prettier-config](./packages/prettier-config/README.md)
 - [remark-config](./packages/remark-config/README.md)
 - [stylelint-config](./packages/stylelint-config/README.md)
@@ -30,6 +31,11 @@ My shareable configs
 
 [![version](https://img.shields.io/npm/v/@tiagoporto/eslint-config?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/eslint-config)
 [![Downloads](https://img.shields.io/npm/dm/@tiagoporto/eslint-config.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/eslint-config)
+
+### @tiagoporto/github-files
+
+[![version](https://img.shields.io/npm/v/@tiagoporto/github-files?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/github-files)
+[![Downloads](https://img.shields.io/npm/dm/@tiagoporto/github-files.svg?style=flat-square)](https://www.npmjs.com/package/@tiagoporto/github-files)
 
 ### @tiagoporto/prettier-config
 

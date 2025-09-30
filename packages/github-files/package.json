@@ -1,0 +1,35 @@
+{
+  "name": "@tiagoporto/github-files",
+  "version": "0.0.0-development",
+  "description": "Github files.",
+  "repository": {
+    "url": "git+https://github.com/tiagoporto/config.git",
+    "directory": "packages/github-files"
+  },
+  "author": {
+    "name": "Tiago Porto",
+    "url": "https://tiagoporto.com"
+  },
+  "keywords": [
+    "github",
+    "codeowners",
+    "semantic-prs"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "assets/",
+    "index.mjs",
+    "save-file.mjs"
+  ],
+  "bin": {
+    "github-files": "index.mjs"
+  },
+  "scripts": {
+    "release": "npx semantic-release",
+    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
+  }
+}
