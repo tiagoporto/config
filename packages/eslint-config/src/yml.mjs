@@ -25,6 +25,7 @@ export const ymlConfig = [
   },
   {
     files: ['pnpm-*.{yaml,YAML}'],
+    ignores: ['pnpm-lock.yaml'],
     ...config,
     rules: {
       ...config.rules,
