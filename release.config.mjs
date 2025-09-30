@@ -24,6 +24,7 @@ const config = {
 }
 
 // NOTE: add BRANCH env in the workflow
+console.info('env.BRANCH:', env.BRANCH)
 if (env.BRANCH === 'main') {
   config.plugins.push('@semantic-release/github')
 }
