@@ -2,8 +2,8 @@ import * as mdx from 'eslint-plugin-mdx'
 
 /** @type {import('eslint').Linter.Config[]} */
 export const markdownConfig = [
-  // MARKDOWN files
   {
+    name: 'tp/markdown',
     ...mdx.flat,
     files: ['**/*.{md,markdown}'],
     languageOptions: {
@@ -20,18 +20,16 @@ export const markdownConfig = [
       'mdx/remark': 'off',
     },
   },
-
-  // MDX files and code blocks
   {
+    name: 'tp/mdx',
     ...mdx.flat,
     files: ['**/*.mdx'],
     processor: mdx.createRemarkProcessor({
       lintCodeBlocks: true,
     }),
   },
-
-  // Markdown and MDX code blocks
   {
+    name: 'tp/markdown-code-blocks',
     ...mdx.flat,
     ...mdx.flatCodeBlocks,
     files: ['**/*.{md,markdown,mdx}/*'],

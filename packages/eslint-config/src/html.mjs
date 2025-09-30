@@ -5,8 +5,8 @@ import { baseConfig } from './javascript.mjs'
 
 /** @type {import('eslint').Linter.Config[]} */
 export const htmlConfig = [
-  // HTML files
   {
+    name: 'tp/js-in-html',
     files: ['**/*.html'],
     plugins: {
       html,
@@ -15,12 +15,9 @@ export const htmlConfig = [
     rules: {
       ...baseConfig.rules,
     },
-    settings: {
-      // 'html/indent': '+2',
-      'html/report-bad-indent': 'error',
-    },
   },
   {
+    name: 'tp/html',
     ...eslintHtml.configs['flat/recommended'],
     files: ['**/*.html'],
     rules: {

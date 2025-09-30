@@ -20,10 +20,12 @@ const config = {
 export const ymlConfig = [
   // YML and YAML files
   {
+    name: 'tp/yaml',
     files: ['**/*.{yml,YML}', '**/*.{yaml,YAML}'],
     ...config,
   },
   {
+    name: 'tp/pnpm-yaml',
     files: ['pnpm-*.{yaml,YAML}'],
     ignores: ['pnpm-lock.yaml'],
     ...config,

@@ -13,37 +13,23 @@ const config = {
 export const jsonConfig = [
   // JSON files
   {
+    name: 'tp/json',
     files: ['**/*.json'],
     ignores: ['package-lock.json'],
     language: 'json/json',
     ...config,
   },
-
-  // package.json
-  {
-    files: ['package.json'],
-    language: 'json/json',
-    plugins: { ...config.plugins },
-    rules: { ...config.rules },
-  },
-
-  // .tsconfig.json and .vscode files
-  {
-    files: ['**/tsconfig.json', '.vscode/**/*.json'],
-    language: 'json/jsonc',
-    plugins: { ...config.plugins },
-    rules: { ...config.rules },
-  },
-
   // JSONC files
   {
-    files: ['**/*.jsonc'],
+    name: 'tp/jsonc',
+    files: ['**/*.jsonc', '**/tsconfig.json', '.vscode/**/*.json'],
     language: 'json/jsonc',
     ...config,
   },
 
   // JSON5 files
   {
+    name: 'tp/json5',
     files: ['**/*.json5'],
     language: 'json/json5',
     ...config,

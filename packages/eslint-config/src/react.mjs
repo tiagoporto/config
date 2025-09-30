@@ -10,6 +10,7 @@ const neoConfig = neostandard({ noStyle: true, ts: true })
 /** @type {import('eslint').Linter.Config[]} */
 export const reactConfig = [
   {
+    name: 'tp/react',
     files: ['**/*.{jsx,tsx}'],
     languageOptions: {
       ...tsConfig.languageOptions,
@@ -44,6 +45,7 @@ export const reactConfig = [
     },
   },
   {
+    name: 'tp/react-test',
     files: ['**/*.{test,spec}.{jsx,tsx}'],
     rules: {
       ...testRules,

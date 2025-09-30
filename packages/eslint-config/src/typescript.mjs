@@ -38,10 +38,12 @@ export const tsConfig = {
 /** @type {import('eslint').Linter.Config[]} */
 export const typescriptConfig = plugins['typescript-eslint'].config(
   {
+    name: 'tp/typescript',
     files: ['**/*.{ts,mts,cts}'],
     ...tsConfig,
   },
   {
+    name: 'tp/typescript-test',
     files: ['**/*.{test,spec}.{ts,mts,cts}'],
     rules: {
       ...testRules,

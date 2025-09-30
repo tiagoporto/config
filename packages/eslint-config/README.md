@@ -5,38 +5,22 @@ Shareable Config for [ESlint](https://eslint.org).
 ## Installation
 
 ```bash
-npm install --save-dev eslint globals @tiagoporto/eslint-config
+npm install --save-dev eslint @tiagoporto/eslint-config
 ```
 
 ## Usage
 
-### Browser
-
-```mjs
-// eslint.config.mjs
-import globals from 'globals'
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [
-  {
-    languageOptions: { globals: globals.browser }
-  }
-]
-```
-
-### Node
-
-```mjs
-// eslint.config.mjs
-import globals from 'globals'
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [{ languageOptions: { globals: globals.node } }]
-```
-
 ### configs
 
 #### base
+
+```mjs
+// eslint.config.mjs
+import tpConfig from '@tiagoporto/eslint-config'
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...tpConfig.configs.base]
+```
 
 Linted files
 
@@ -47,19 +31,7 @@ Linted files
 - **Javascript** - `js`,`mjs` and `cjs`
 - **Typescript** - `ts`,`mts` and `cts`
 
-```mjs
-// eslint.config.mjs
-import tpConfig from '@tiagoporto/eslint-config'
-
-/** @type {import('eslint').Linter.Config[]} */
-export default [...tpConfig.configs.base]
-```
-
 #### react
-
-Linted files
-
-All from base config plus **JavaScript XML** - `jsx` and `tsx`
 
 ```mjs
 // eslint.config.mjs
@@ -69,9 +41,12 @@ import tpConfig from '@tiagoporto/eslint-config'
 export default [...tpConfig.configs.react]
 ```
 
-In `package.json` add the following scripts:
+All from base config plus **JavaScript XML** - `jsx` and `tsx`
 
-```json
+#### NPM scripts
+
+```jsonc
+// package.json
 {
   "scripts": {
     "lint": "eslint --max-warnings 0",

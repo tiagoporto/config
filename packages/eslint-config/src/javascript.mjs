@@ -4,6 +4,7 @@ import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import jsdoc from 'eslint-plugin-jsdoc'
 import nodePlugin from 'eslint-plugin-n'
 import unicorn from 'eslint-plugin-unicorn'
+import globals from 'globals'
 import neostandard, { plugins } from 'neostandard'
 
 const neoConfig = neostandard({ noStyle: true, noJsx: true })
@@ -100,29 +101,46 @@ export const testRules = {
 
 /** @type {import('eslint').Linter.Config[]} */
 export const javascriptConfig = [
-  // JS files
   {
+    name: 'tp/javascript',
     files: ['**/*.{js,mjs,cjs}'],
-    languageOptions: {},
+    languageOptions: {
+      globals: globals.browser,
+      sourceType: 'module',
+      ecmaVersion: 'latest',
+    },
     ...baseConfig,
   },
-  // Node
   {
+    name: 'tp/node-module',
     files: ['**/*.{mjs}'],
     ...nodePlugin.configs['flat/recommended-module'],
+    languageOptions: {
+      globals: {
+        ...globals.nodeBuiltin,
+      },
+      sourceType: 'module',
+      ecmaVersion: 'latest',
+    },
     rules: {
       ...nodePlugin.configs['flat/recommended-module'].rules,
     },
   },
   {
+    name: 'tp/node-commonjs',
     files: ['**/*.{cjs}'],
     ...nodePlugin.configs['flat/recommended-script'],
+    languageOptions: {
+      globals: globals.node,
+      sourceType: 'module',
+      ecmaVersion: 'latest',
+    },
     rules: {
       ...nodePlugin.configs['flat/recommended-script'].rules,
     },
   },
-  // Test files
   {
+    name: 'tp/javascript-test',
     files: ['**/*.{test,spec}.{js,mjs,cjs}'],
     rules: {
       ...testRules,
