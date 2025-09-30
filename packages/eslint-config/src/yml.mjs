@@ -18,7 +18,9 @@ const config = {
 
 /** @type {import('eslint').Linter.Config[]} */
 export const ymlConfig = [
-  // YML and YAML files
+  {
+    ignores: ['pnpm-lock.yaml'],
+  },
   {
     name: 'tp/yaml',
     files: ['**/*.{yml,YML}', '**/*.{yaml,YAML}'],
@@ -27,7 +29,6 @@ export const ymlConfig = [
   {
     name: 'tp/pnpm-yaml',
     files: ['pnpm-*.{yaml,YAML}'],
-    ignores: ['pnpm-lock.yaml'],
     ...config,
     rules: {
       ...config.rules,

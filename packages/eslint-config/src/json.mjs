@@ -11,23 +11,21 @@ const config = {
 
 /** @type {import('eslint').Linter.Config[]} */
 export const jsonConfig = [
-  // JSON files
+  {
+    ignores: ['package-lock.json'],
+  },
   {
     name: 'tp/json',
     files: ['**/*.json'],
-    ignores: ['package-lock.json'],
     language: 'json/json',
     ...config,
   },
-  // JSONC files
   {
     name: 'tp/jsonc',
     files: ['**/*.jsonc', '**/tsconfig.json', '.vscode/**/*.json'],
     language: 'json/jsonc',
     ...config,
   },
-
-  // JSON5 files
   {
     name: 'tp/json5',
     files: ['**/*.json5'],
