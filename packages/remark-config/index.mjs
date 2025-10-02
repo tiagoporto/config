@@ -1,3 +1,5 @@
+import path from 'node:path'
+import process from 'node:process'
 import remarkEmoji from 'remark-emoji'
 import remarkFrontmatter from 'remark-frontmatter'
 import remarkGFM from 'remark-gfm'
@@ -14,6 +16,9 @@ import retextEquality from 'retext-equality'
 import retextQuotes from 'retext-quotes'
 import retextSyntaxMentions from 'retext-syntax-mentions'
 import { unified } from 'unified'
+
+const currentPath = process.cwd()
+const folderName = path.basename(currentPath)
 
 export default {
   settings: {
@@ -32,6 +37,8 @@ export default {
     [
       remarkLintNoDeadUrls,
       {
+        // TODO: https://github.com/wooorm/dead-or-alive/issues/3
+        skipUrlPatterns: [`https://tiagoporto.github.io/${folderName}/`],
         skipLocalhost: true,
         skipOffline: true,
         deadOrAliveOptions: {
