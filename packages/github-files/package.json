@@ -16,7 +16,7 @@
     "semantic-prs"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=20"
   },
   "type": "module",
   "license": "MIT",

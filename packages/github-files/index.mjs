@@ -1,33 +1,20 @@
 #!/usr/bin/env node
-
-import childProcess from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import { exit } from 'node:process'
-import { fileURLToPath } from 'node:url'
+import process from 'node:process'
 
 import pkg from './package.json' with { type: 'json' }
 import { saveFile } from './save-file.mjs'
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(new URL(import.meta.url).pathname)
+const currentPath = process.cwd()
 let isUsingConventionalCommits = false
-let gitRoot
 
 console.info(`[${pkg.name}] Running...`)
 
-try {
-  gitRoot = childProcess
-    .execSync('git rev-parse --show-toplevel')
-    .toString()
-    .trim()
-} catch {
-  console.error(`\u001B[0;31m[${pkg.name}] Could not get root path\u001B[0m`)
-  exit()
-}
-
 // check if uses conventional commits
 const installedPackages = JSON.parse(
-  fs.readFileSync(path.join(gitRoot, 'package.json'), 'utf8'),
+  fs.readFileSync(path.join(currentPath, 'package.json'), 'utf8'),
 )
 
 if (
@@ -37,7 +24,7 @@ if (
   isUsingConventionalCommits = true
 }
 
-const githubDestinationFolder = path.join(gitRoot, '.github')
+const githubDestinationFolder = path.join(currentPath, '.github')
 
 const codeOwnersFileName = 'CODEOWNERS'
 const codeOwnersSource = path.join(__dirname, 'assets', codeOwnersFileName)
