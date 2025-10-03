@@ -16,7 +16,7 @@
     "config"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=20"
   },
   "type": "module",
   "exports": "./index.mjs",
