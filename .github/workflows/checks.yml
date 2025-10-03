@@ -18,6 +18,12 @@ jobs:
   checks:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        # minimum version 20
+        node-version: [lts/iron, lts/*, latest]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -26,7 +32,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           # Use for testing esm modules support
-          node-version: 20.x
+          node-version: ${{ matrix.node-version }}
           cache: npm
 
       - name: Install Dependencies
