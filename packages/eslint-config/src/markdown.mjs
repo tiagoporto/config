@@ -48,6 +48,7 @@ export const markdownConfig = [
       '@html-eslint/require-title': 'off',
       '@html-eslint/require-meta-description': 'off',
       '@html-eslint/require-open-graph-protocol': 'off',
+      '@html-eslint/require-img-alt': 'off',
     },
   },
 ]

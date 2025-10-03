@@ -24,12 +24,17 @@ export default [...tpConfig.configs.base]
 
 Linted files
 
-- **HTML** - `html` and code into `script` tag
-- **YAML** - `yml`, and `yaml`
-- **Json** - `json`, `jsonc` and `json5`
-- **Markdown** - `md`, `markdown`, `mdx` and `code blocks`
-- **Javascript** - `js`,`mjs` and `cjs`
-- **Typescript** - `ts`,`mts` and `cts`
+- **Javascript** - `.js`,`.mjs`, `.cjs` and `<script>`
+- **Typescript** - `.ts`,`.mts` and `.cts`
+- **HTML** - `.html` and html in template literal strings (necessary comment)
+
+  ```js
+  const code = /* html */ `<img class="image">`
+  ```
+
+- **YAML** - `.yml`, and `.yaml`
+- **Json** - `.json`, `.jsonc` and `.json5`
+- **Markdown** - `.md`, `.markdown`, `.mdx` and code blocks
 
 #### react
 
@@ -41,7 +46,11 @@ import tpConfig from '@tiagoporto/eslint-config'
 export default [...tpConfig.configs.react]
 ```
 
-All from base config plus **JavaScript XML** - `jsx` and `tsx`
+Linted files
+
+All from base config
+
+- **JavaScript XML** - `.jsx` and `.tsx`
 
 #### NPM scripts
 
@@ -66,7 +75,8 @@ export default {
     // remark,
     'eslint --max-warnings 0 --no-warn-ignored'
   ],
-  '*.{html,yml,json,jsonc,json5}': 'eslint --max-warnings 0 --no-warn-ignored',
+  '*.{html,yml,yaml,json,jsonc,json5}':
+    'eslint --max-warnings 0 --no-warn-ignored',
   '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': [
     'eslint --max-warnings 0 --no-warn-ignored'
     // unit test

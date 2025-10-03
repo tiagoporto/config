@@ -1,5 +1,6 @@
 import js from '@eslint/js'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
+import html from 'eslint-plugin-html'
 // eslint-disable-next-line import-x/no-named-as-default
 import jsdoc from 'eslint-plugin-jsdoc'
 import nodePlugin from 'eslint-plugin-n'
@@ -110,6 +111,17 @@ export const javascriptConfig = [
       ecmaVersion: 'latest',
     },
     ...baseConfig,
+  },
+  {
+    name: 'tp/js-in-html',
+    files: ['**/*.html'],
+    plugins: {
+      html,
+      ...baseConfig.plugins,
+    },
+    rules: {
+      ...baseConfig.rules,
+    },
   },
   {
     name: 'tp/node-module',
