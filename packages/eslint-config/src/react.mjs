@@ -6,6 +6,8 @@ import { testRules } from './javascript.mjs'
 import { tsConfig } from './typescript.mjs'
 
 const neoConfig = neostandard({ noStyle: true, ts: true })
+const recommended = plugins['typescript-eslint'].configs.recommended
+const stylistic = plugins['typescript-eslint'].configs.stylistic
 
 /** @type {import('eslint').Linter.Config[]} */
 export const reactConfig = [
@@ -28,6 +30,10 @@ export const reactConfig = [
       ...neoConfig[3].settings,
     },
     rules: {
+      // typescript-eslint/recommended
+      ...recommended[2].rules,
+      // typescript-eslint/stylistic
+      ...stylistic[2].rules,
       ...tsConfig.rules,
       ...plugins.react.configs.flat.recommended.rules,
       ...plugins.react.configs.flat['jsx-runtime'].rules,

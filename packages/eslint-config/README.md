@@ -36,6 +36,18 @@ Linted files
 - **Json** - `.json`, `.jsonc` and `.json5`
 - **Markdown** - `.md`, `.markdown`, `.mdx` and code blocks
 
+#### base type-checked
+
+```mjs
+// eslint.config.mjs
+import tpConfig from '@tiagoporto/eslint-config'
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...tpConfig.configs.baseTypeChecked]
+```
+
+Requires `tsconfig.json` with `include` set.
+
 #### react
 
 ```mjs

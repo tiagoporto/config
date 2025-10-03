@@ -8,7 +8,10 @@ import { javascriptConfig } from './src/javascript.mjs'
 import { jsonConfig } from './src/json.mjs'
 import { markdownConfig } from './src/markdown.mjs'
 import { reactConfig } from './src/react.mjs'
-import { typescriptConfig } from './src/typescript.mjs'
+import {
+  typescriptConfig,
+  typescriptTypeCheckedConfig,
+} from './src/typescript.mjs'
 import { ymlConfig } from './src/yml.mjs'
 
 const processPath = childProcess
@@ -20,21 +23,23 @@ const gitignorePath = path.resolve(processPath, '.gitignore')
 const jsonData = fs.readFileSync('./package.json', 'utf8')
 const { name, version } = JSON.parse(jsonData)
 
+const base = [
+  includeIgnoreFile(gitignorePath),
+  ...htmlConfig,
+  ...javascriptConfig,
+  ...jsonConfig,
+  ...markdownConfig,
+  ...ymlConfig,
+]
+
 export default {
   meta: {
     name,
     version,
   },
   configs: {
-    base: [
-      includeIgnoreFile(gitignorePath),
-      ...htmlConfig,
-      ...javascriptConfig,
-      ...jsonConfig,
-      ...markdownConfig,
-      ...typescriptConfig,
-      ...ymlConfig,
-    ],
+    base: [...base, ...typescriptConfig],
+    baseTypeChecked: [...base, ...typescriptTypeCheckedConfig],
     react: [
       includeIgnoreFile(gitignorePath),
       ...htmlConfig,

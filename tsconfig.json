@@ -1,0 +1,14 @@
+/* Visit https://aka.ms/tsconfig to read more about this file */
+/* https://gist.github.com/tiagoporto/14db8e6257c962054108265bdf2a6bfa */
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["packages"]
+}
