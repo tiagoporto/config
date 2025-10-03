@@ -1,31 +1,18 @@
 #!/usr/bin/env node
-import childProcess from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
-import { exit } from 'node:process'
-import { fileURLToPath } from 'node:url'
+import process, { exit } from 'node:process'
 
 import pkg from './package.json' with { type: 'json' }
 
 const fileName = '.editorconfig'
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(new URL(import.meta.url).pathname)
 const source = path.join(__dirname, fileName)
-
-let gitRoot
+const currentPath = process.cwd()
 
 console.info(`[${pkg.name}] Running...`)
 
-try {
-  gitRoot = childProcess
-    .execSync('git rev-parse --show-toplevel')
-    .toString()
-    .trim()
-} catch {
-  console.error(`\u001B[0;31m[${pkg.name}] Could not get root path\u001B[0m`)
-  exit()
-}
-
-const destination = path.join(gitRoot, fileName)
+const destination = path.join(currentPath, fileName)
 
 if (source === destination) {
   exit()
