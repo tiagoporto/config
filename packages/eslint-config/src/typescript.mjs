@@ -1,7 +1,7 @@
 // eslint-disable-next-line import-x/no-named-as-default
 import jsdoc from 'eslint-plugin-jsdoc'
 import neostandard, { plugins } from 'neostandard'
-import childProcess from 'node:child_process'
+import process from 'node:process'
 
 import { baseConfig, testRules } from './javascript.mjs'
 
@@ -9,10 +9,7 @@ const neoConfig = neostandard({ noStyle: true, ts: true, noJsx: true })
 const recommended = plugins['typescript-eslint'].configs.recommended
 const stylistic = plugins['typescript-eslint'].configs.stylistic
 
-const gitRoot = childProcess
-  .execSync('git rev-parse --show-toplevel')
-  .toString()
-  .trim()
+const currentPath = process.cwd()
 
 export const tsConfig = {
   languageOptions: {
@@ -79,7 +76,7 @@ export const typescriptTypeCheckedConfig = [
       ...tsConfig.languageOptions,
       parserOptions: {
         projectService: true,
-        tsconfigRootDir: gitRoot,
+        tsconfigRootDir: currentPath,
       },
     },
     rules: {

@@ -64,6 +64,16 @@ All from base config
 
 - **JavaScript XML** - `.jsx` and `.tsx`
 
+#### react type-checked
+
+```mjs
+// eslint.config.mjs
+import tpConfig from '@tiagoporto/eslint-config'
+
+/** @type {import('eslint').Linter.Config[]} */
+export default [...tpConfig.configs.reactTypeChecked]
+```
+
 #### NPM scripts
 
 ```jsonc

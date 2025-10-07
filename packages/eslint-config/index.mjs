@@ -40,15 +40,7 @@ export default {
   configs: {
     base: [...base, ...typescriptConfig],
     baseTypeChecked: [...base, ...typescriptTypeCheckedConfig],
-    react: [
-      includeIgnoreFile(gitignorePath),
-      ...htmlConfig,
-      ...javascriptConfig,
-      ...jsonConfig,
-      ...markdownConfig,
-      ...reactConfig,
-      ...typescriptConfig,
-      ...ymlConfig,
-    ],
+    react: [...base, ...typescriptConfig, ...reactConfig],
+    reactTypeChecked: [...base, ...typescriptTypeCheckedConfig, ...reactConfig],
   },
 }
