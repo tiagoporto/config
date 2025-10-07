@@ -28,10 +28,6 @@
     "index.mjs",
     "mdx.mjs"
   ],
-  "scripts": {
-    "release": "npx semantic-release",
-    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
-  },
   "dependencies": {
     "remark-emoji": "^5.0.2",
     "remark-frontmatter": "^5.0.0",

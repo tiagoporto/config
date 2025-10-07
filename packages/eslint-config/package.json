@@ -25,10 +25,6 @@
     "src/**",
     "index.mjs"
   ],
-  "scripts": {
-    "release": "npx semantic-release",
-    "release:dry-run": "npx semantic-release --dry-run --verify-conditions false"
-  },
   "dependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
     "@eslint/compat": "^1.4.0",
