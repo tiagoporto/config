@@ -1,38 +1,32 @@
-// eslint-disable-next-line import-x/no-named-as-default
-import jsdoc from 'eslint-plugin-jsdoc'
-import neostandard, { plugins } from 'neostandard'
+import { importX } from 'eslint-plugin-import-x'
+import doc from 'eslint-plugin-jsdoc'
 import process from 'node:process'
+import tseslint from 'typescript-eslint'
 
 import { baseConfig, testRules } from './javascript.mjs'
-
-const neoConfig = neostandard({ noStyle: true, ts: true, noJsx: true })
-const recommended = plugins['typescript-eslint'].configs.recommended
-const stylistic = plugins['typescript-eslint'].configs.stylistic
 
 const currentPath = process.cwd()
 
 export const tsConfig = {
   languageOptions: {
-    // typescript-eslint/base
-    ...recommended[0].languageOptions,
+    ...tseslint.configs.base.languageOptions,
   },
   plugins: {
     ...baseConfig.plugins,
-    // typescript-eslint
-    ...recommended[0].plugins,
+    ...tseslint.configs.base.plugins,
+    ...importX.configs['flat/typescript'].plugins,
   },
   settings: {
-    ...plugins['import-x'].flatConfigs.typescript.settings,
+    ...baseConfig.settings,
+    ...importX.configs['flat/typescript'].settings,
   },
   rules: {
     ...baseConfig.rules,
-    // typescript-eslint/eslint-recommended
-    ...recommended[1].rules,
-    // neostandard/ts
-    ...neoConfig[2].rules,
-    ...plugins['import-x'].flatConfigs.typescript.rules,
-    // jsdoc/flat/recommended-typescript
-    ...jsdoc.configs['flat/recommended-typescript'].rules,
+    ...tseslint.configs.eslintRecommended.rules,
+    ...tseslint.configs.recommended[2].rules,
+    ...tseslint.configs.stylistic[2].rules,
+    ...importX.configs['flat/typescript'].rules,
+    ...doc.configs['flat/recommended-typescript'].rules,
   },
 }
 
@@ -43,10 +37,6 @@ export const typescriptConfig = [
     files: ['**/*.{ts,mts,cts}'],
     ...tsConfig,
     rules: {
-      // typescript-eslint/recommended
-      ...recommended[2].rules,
-      // typescript-eslint/stylistic
-      ...stylistic[2].rules,
       ...tsConfig.rules,
     },
   },
@@ -59,17 +49,10 @@ export const typescriptConfig = [
   },
 ]
 
-// Type Checked
-
-const recommendedTypeChecked =
-  plugins['typescript-eslint'].configs.recommendedTypeChecked
-const stylisticTypeChecked =
-  plugins['typescript-eslint'].configs.stylisticTypeChecked
-
 /** @type {import('eslint').Linter.Config[]} */
 export const typescriptTypeCheckedConfig = [
   {
-    name: 'tp/typescript',
+    name: 'tp/typescript-type-checked',
     files: ['**/*.{ts,mts,cts}'],
     ...tsConfig,
     languageOptions: {
@@ -81,10 +64,8 @@ export const typescriptTypeCheckedConfig = [
     },
     rules: {
       ...tsConfig.rules,
-      // typescript-eslint/recommended-type-checked
-      ...recommendedTypeChecked[2].rules,
-      // typescript-eslint/stylistic-type-checked
-      ...stylisticTypeChecked[2].rules,
+      ...tseslint.configs.recommendedTypeCheckedOnly[2].rules,
+      ...tseslint.configs.stylisticTypeCheckedOnly[2].rules,
     },
   },
   {

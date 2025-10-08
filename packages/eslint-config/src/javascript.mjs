@@ -1,45 +1,23 @@
 import js from '@eslint/js'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import html from 'eslint-plugin-html'
-// eslint-disable-next-line import-x/no-named-as-default
-import jsdoc from 'eslint-plugin-jsdoc'
+import { importX } from 'eslint-plugin-import-x'
+import doc from 'eslint-plugin-jsdoc'
 import nodePlugin from 'eslint-plugin-n'
+import promise from 'eslint-plugin-promise'
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
-import neostandard, { plugins } from 'neostandard'
-
-const neoConfig = neostandard({ noStyle: true, noJsx: true })
 
 export const baseConfig = {
   plugins: {
-    // import-x, n, promise
-    ...neoConfig[0].plugins,
+    ...importX.flatConfigs.recommended.plugins,
+    ...nodePlugin.configs['flat/recommended'].plugins,
+    ...promise.configs['flat/recommended'].plugins,
     ...comments.recommended.plugins,
-    ...jsdoc.configs['flat/recommended'].plugins,
+    ...doc.configs['flat/recommended'].plugins,
     unicorn,
   },
   rules: {
-    ...unicorn.configs.recommended.rules,
-    'unicorn/no-empty-file': 'off',
-    'unicorn/no-abusive-eslint-disable': 'off',
-    'unicorn/prevent-abbreviations': [
-      'warn',
-      {
-        checkFilenames: false,
-        replacements: {
-          params: false,
-          prod: false,
-          dev: false,
-          i: false,
-          props: false,
-          pkg: false,
-        },
-      },
-    ],
-    // neostandard/base
-    ...neoConfig[0].rules,
-    // neostandard/modernization-since-standard-17
-    ...neoConfig[1].rules,
     ...js.configs.recommended.rules,
     'no-void': ['error', { allowAsStatement: true }],
     'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
@@ -55,8 +33,7 @@ export const baseConfig = {
         ignoreRestSiblings: true,
       },
     ],
-    // import-x/recommended
-    ...plugins['import-x'].flatConfigs.recommended.rules,
+    ...importX.flatConfigs.recommended.rules,
     'import-x/no-unresolved': 'off',
     'import-x/order': [
       'warn',
@@ -86,12 +63,28 @@ export const baseConfig = {
         },
       },
     ],
-    // promise/flat/recommended
-    ...plugins.promise.configs['flat/recommended'].rules,
-    // @eslint-community/eslint-comments/recommended
+    ...promise.configs['flat/recommended'].rules,
+
+    ...unicorn.configs.recommended.rules,
+    'unicorn/no-empty-file': 'off',
+    'unicorn/no-abusive-eslint-disable': 'off',
+    'unicorn/prevent-abbreviations': [
+      'warn',
+      {
+        checkFilenames: false,
+        replacements: {
+          params: false,
+          prod: false,
+          dev: false,
+          i: false,
+          props: false,
+          pkg: false,
+        },
+      },
+    ],
+
     ...comments.recommended.rules,
-    // jsdoc/flat/recommended
-    ...jsdoc.configs['flat/recommended'].rules,
+    ...doc.configs['flat/recommended'].rules,
     'jsdoc/require-jsdoc': ['off'],
   },
 }
