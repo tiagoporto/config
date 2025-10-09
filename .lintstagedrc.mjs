@@ -5,7 +5,7 @@ export default {
     'eslint --max-warnings 0 --no-warn-ignored',
   ],
   '*.{html,yml,json,jsonc,json5}': 'eslint --max-warnings 0 --no-warn-ignored',
-  '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': [
+  '*.{js,mjs,cjs,jsx,ts,tsx}': [
     'eslint --max-warnings 0 --no-warn-ignored',
     // unit test
   ],
