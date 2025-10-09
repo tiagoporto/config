@@ -119,7 +119,9 @@ export const javascriptConfig = [
   {
     name: 'tp/node-module',
     files: ['**/*.{mjs}'],
-    ...nodePlugin.configs['flat/recommended-module'],
+    plugins: {
+      ...nodePlugin.configs['flat/recommended-module'].plugins,
+    },
     languageOptions: {
       globals: {
         ...globals.nodeBuiltin,
@@ -134,10 +136,12 @@ export const javascriptConfig = [
   {
     name: 'tp/node-commonjs',
     files: ['**/*.{cjs}'],
-    ...nodePlugin.configs['flat/recommended-script'],
+    plugins: {
+      ...nodePlugin.configs['flat/recommended-script'].plugins,
+    },
     languageOptions: {
       globals: globals.node,
-      sourceType: 'module',
+      sourceType: 'commonjs',
       ecmaVersion: 'latest',
     },
     rules: {
