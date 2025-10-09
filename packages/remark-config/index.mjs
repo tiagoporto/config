@@ -29,7 +29,8 @@ function getPackageJsonFiles(directory) {
     const stat = fs.statSync(filePath)
     if (stat.isDirectory() && file !== 'node_modules') {
       packageJsonFiles.push(...getPackageJsonFiles(filePath))
-    } else if (file === 'package.json') {
+    }
+    else if (file === 'package.json') {
       packageJsonFiles.push(filePath)
     }
   }
@@ -41,7 +42,7 @@ const pkgNames = pkgPaths.map((pkgPath) => {
   return JSON.parse(fs.readFileSync(path.join(pkgPath), 'utf8')).name
 })
 const ignoreAllNpmUrls = pkgNames.map(
-  (pkg) => `https://www.npmjs.com/package/${pkg}`,
+  pkg => `https://www.npmjs.com/package/${pkg}`,
 )
 
 export default {

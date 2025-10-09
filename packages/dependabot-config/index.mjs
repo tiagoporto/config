@@ -20,8 +20,8 @@ const installedPackages = JSON.parse(
 )
 
 if (
-  installedPackages.dependencies?.['@commitlint/config-conventional'] ||
-  installedPackages.devDependencies?.['@commitlint/config-conventional']
+  installedPackages.dependencies?.['@commitlint/config-conventional']
+  || installedPackages.devDependencies?.['@commitlint/config-conventional']
 ) {
   isUsingConventionalCommits = true
 }
