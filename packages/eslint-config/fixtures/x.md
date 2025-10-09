@@ -1,0 +1,9 @@
+# Test
+
+```js
+const b = 2 + eer
+
+// eslint-disable-next-line no-empty, unicorn/empty-brace-spaces
+for (const a of b) {
+}
+```

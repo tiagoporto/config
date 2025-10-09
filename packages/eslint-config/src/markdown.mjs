@@ -1,3 +1,4 @@
+import stylistic from '@stylistic/eslint-plugin'
 import * as mdx from 'eslint-plugin-mdx'
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -30,9 +31,17 @@ export const markdownConfig = [
   },
   {
     name: 'tp/markdown-code-blocks',
-    ...mdx.flat,
-    ...mdx.flatCodeBlocks,
     files: ['**/*.{md,markdown,mdx}/*'],
+    languageOptions: {
+      ...mdx.flatCodeBlocks.languageOptions,
+    },
+    processor: {
+      ...mdx.flat.processor,
+    },
+    plugins: {
+      ...mdx.flat.plugins,
+      ...stylistic.configs.recommended.plugins,
+    },
     rules: {
       ...mdx.flatCodeBlocks.rules,
       'mdx/remark': 'warn',
@@ -49,6 +58,8 @@ export const markdownConfig = [
       '@html-eslint/require-meta-description': 'off',
       '@html-eslint/require-open-graph-protocol': 'off',
       '@html-eslint/require-img-alt': 'off',
+      '@stylistic/comma-dangle': ['error', 'never'],
+
     },
   },
 ]

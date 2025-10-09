@@ -1,5 +1,6 @@
 import js from '@eslint/js'
 import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
+import stylistic from '@stylistic/eslint-plugin'
 import html from 'eslint-plugin-html'
 import { importX } from 'eslint-plugin-import-x'
 import doc from 'eslint-plugin-jsdoc'
@@ -15,6 +16,7 @@ export const baseConfig = {
     ...promise.configs['flat/recommended'].plugins,
     ...comments.recommended.plugins,
     ...doc.configs['flat/recommended'].plugins,
+    ...stylistic.configs.recommended.plugins,
     unicorn,
   },
   rules: {
@@ -38,26 +40,26 @@ export const baseConfig = {
     'import-x/order': [
       'warn',
       {
-        groups: [
+        'groups': [
           ['builtin', 'external'],
           'internal',
           'unknown',
           ['parent', 'sibling', 'index'],
           'object',
         ],
-        pathGroups: [
+        'pathGroups': [
           {
             pattern: 'react',
             group: 'external',
             position: 'before',
           },
         ],
-        distinctGroup: false,
-        pathGroupsExcludedImportTypes: ['react'],
+        'distinctGroup': false,
+        'pathGroupsExcludedImportTypes': ['react'],
         'newlines-between': 'always',
         // named: true,
-        warnOnUnassignedImports: true,
-        alphabetize: {
+        'warnOnUnassignedImports': true,
+        'alphabetize': {
           order: 'asc',
           caseInsensitive: true,
         },
@@ -86,6 +88,8 @@ export const baseConfig = {
     ...comments.recommended.rules,
     ...doc.configs['flat/recommended'].rules,
     'jsdoc/require-jsdoc': ['off'],
+
+    ...stylistic.configs.recommended.rules,
   },
 }
 
@@ -114,6 +118,7 @@ export const javascriptConfig = [
     },
     rules: {
       ...baseConfig.rules,
+      '@stylistic/spaced-comment': 'off',
     },
   },
   {

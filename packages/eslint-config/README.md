@@ -126,6 +126,22 @@ export default {
 }
 ```
 
+## Prettier
+
+To avoid conflicts with Prettier, ignore the following files:
+
+```sh
+# .prettierignore
+**/*.js
+**/*.mjs
+**/*.cjs
+**/*.jsx
+**/*.ts
+**/*.mts
+**/*.cts
+**/*.tsx
+```
+
 ## Editor
 
 For [VSCode](https://code.visualstudio.com) is recommended the following extensions:
