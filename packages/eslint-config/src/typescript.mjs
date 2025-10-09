@@ -7,6 +7,9 @@ import { baseConfig, testRules } from './javascript.mjs'
 export const tsConfig = {
   languageOptions: {
     ...tseslint.configs.base.languageOptions,
+    ...baseConfig.languageOptions,
+    sourceType: 'module',
+    ecmaVersion: 'latest',
   },
   plugins: {
     ...baseConfig.plugins,
@@ -31,7 +34,7 @@ export const tsConfig = {
 export const typescriptConfig = [
   {
     name: 'tp/typescript',
-    files: ['**/*.{ts,mts,cts}'],
+    files: ['**/*.{ts,tsx}'],
     ...tsConfig,
     rules: {
       ...tsConfig.rules,
@@ -39,7 +42,7 @@ export const typescriptConfig = [
   },
   {
     name: 'tp/typescript-test',
-    files: ['**/*.{test,spec}.{ts,mts,cts}'],
+    files: ['**/*.{test,spec}.{ts,tsx}'],
     rules: {
       ...testRules,
     },
@@ -50,12 +53,8 @@ export const typescriptConfig = [
 export const typescriptTypeCheckedConfig = [
   {
     name: 'tp/typescript-type-checked',
-    files: ['**/*.{ts,mts,cts}'],
+    files: ['**/*.{ts,tsx}'],
     ...tsConfig,
-    languageOptions: {
-      ...tsConfig.languageOptions,
-      ecmaVersion: 'latest',
-    },
     rules: {
       ...tsConfig.rules,
       ...tseslint.configs.recommendedTypeCheckedOnly[2].rules,
@@ -64,7 +63,7 @@ export const typescriptTypeCheckedConfig = [
   },
   {
     name: 'tp/typescript-test',
-    files: ['**/*.{test,spec}.{ts,mts,cts}'],
+    files: ['**/*.{test,spec}.{ts,tsx}'],
     rules: {
       ...testRules,
     },

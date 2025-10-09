@@ -4,9 +4,10 @@ import tpConfig from '@tiagoporto/eslint-config'
 export default [
   ...tpConfig.configs.react,
   {
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       parserOptions: {
-        project: true,
+        project: ['./tsconfig.json'],
       },
     },
   },

@@ -4,12 +4,16 @@ import stylistic from '@stylistic/eslint-plugin'
 import html from 'eslint-plugin-html'
 import { importX } from 'eslint-plugin-import-x'
 import doc from 'eslint-plugin-jsdoc'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 import nodePlugin from 'eslint-plugin-n'
 import promise from 'eslint-plugin-promise'
 import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 
 export const baseConfig = {
+  languageOptions: {
+    parserOptions: { ecmaFeatures: { jsx: true } },
+  },
   plugins: {
     ...importX.flatConfigs.recommended.plugins,
     ...nodePlugin.configs['flat/recommended'].plugins,
@@ -17,6 +21,7 @@ export const baseConfig = {
     ...comments.recommended.plugins,
     ...doc.configs['flat/recommended'].plugins,
     ...stylistic.configs.recommended.plugins,
+    ...jsxA11y.flatConfigs.recommended.plugins,
     unicorn,
   },
   rules: {
@@ -90,6 +95,7 @@ export const baseConfig = {
     'jsdoc/require-jsdoc': ['off'],
 
     ...stylistic.configs.recommended.rules,
+    ...jsxA11y.flatConfigs.recommended.rules,
   },
 }
 
@@ -101,13 +107,19 @@ export const testRules = {
 export const javascriptConfig = [
   {
     name: 'tp/javascript',
-    files: ['**/*.{js,mjs,cjs}'],
+    files: ['**/*.{js,mjs,cjs,jsx}'],
     languageOptions: {
+      ...baseConfig.languageOptions,
       globals: globals.browser,
       sourceType: 'module',
       ecmaVersion: 'latest',
     },
-    ...baseConfig,
+    plugins: {
+      ...baseConfig.plugins,
+    },
+    rules: {
+      ...baseConfig.rules,
+    },
   },
   {
     name: 'tp/js-in-html',
@@ -155,7 +167,7 @@ export const javascriptConfig = [
   },
   {
     name: 'tp/javascript-test',
-    files: ['**/*.{test,spec}.{js,mjs,cjs}'],
+    files: ['**/*.{test,spec}.{js,mjs,cjs,jsx}'],
     rules: {
       ...testRules,
     },

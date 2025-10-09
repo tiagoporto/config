@@ -5,6 +5,8 @@
     "target": "esnext",
     "module": "esnext",
     "moduleResolution": "bundler",
+    "allowJs": true,
+    "jsx": "preserve",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

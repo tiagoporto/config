@@ -2,6 +2,41 @@
 
 Shareable Config for [ESlint](https://eslint.org).
 
+## Linted files
+
+- **Javascript** - `.js`,`.mjs`, `.cjs` and `<script>`.
+- **Typescript** - `.ts`.
+- **JavaScript XML** - `.jsx` and `.tsx`.
+- **HTML** - `.html` and html in template literal strings (necessary comment).
+
+  ```js
+  const code = /* html */ `<img class="image">`
+  ```
+
+- **YAML** - `.yml`, and `.yaml`.
+- **Json** - `.json`, `.jsonc` and `.json5`.
+- **Markdown** - `.md`, `.markdown`, `.mdx` and code blocks.
+
+## Includes
+
+- [@eslint-community/eslint-plugin-eslint-comments](https://github.com/eslint-community/eslint-plugin-eslint-comments)
+- [@eslint-react/eslint-plugin](https://github.com/Rel1cx/eslint-react)
+- [@eslint/js](https://eslint.org)
+- [@eslint/json](https://github.com/eslint/json)
+- [@html-eslint/eslint-plugin](https://github.com/yeonjuan/html-eslint)
+- [@stylistic/eslint-plugin](https://github.com/eslint-stylistic/eslint-stylistic)
+- [eslint-plugin-html](https://github.com/BenoitZugmeyer/eslint-plugin-html)
+- [eslint-plugin-import-x](https://github.com/un-ts/eslint-plugin-import-x)
+- [eslint-plugin-jsdoc](https://github.com/gajus/eslint-plugin-jsdoc)
+- [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+- [eslint-plugin-mdx](https://github.com/mdx-js/eslint-mdx/tree/master/packages/eslint-plugin-mdx)
+- [eslint-plugin-n](https://github.com/eslint-community/eslint-plugin-n)
+- [eslint-plugin-promise](https://github.com/eslint-community/eslint-plugin-promise)
+- [eslint-plugin-react-hooks](https://react.dev)
+- [eslint-plugin-unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn)
+- [eslint-plugin-yml](https://ota-meshi.github.io/eslint-plugin-yml/)
+- [typescript-eslint](https://typescript-eslint.io/packages/typescript-eslint/)
+
 ## Installation
 
 ```bash
@@ -22,20 +57,6 @@ import tpConfig from '@tiagoporto/eslint-config'
 export default [...tpConfig.configs.base]
 ```
 
-Linted files
-
-- **Javascript** - `.js`,`.mjs`, `.cjs` and `<script>`
-- **Typescript** - `.ts`,`.mts` and `.cts`
-- **HTML** - `.html` and html in template literal strings (necessary comment)
-
-  ```js
-  const code = /* html */ `<img class="image">`
-  ```
-
-- **YAML** - `.yml`, and `.yaml`
-- **Json** - `.json`, `.jsonc` and `.json5`
-- **Markdown** - `.md`, `.markdown`, `.mdx` and code blocks
-
 #### base type-checked
 
 ```mjs
@@ -43,20 +64,19 @@ Linted files
 import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [...tpConfig.configs.baseTypeChecked]
+export default [
+  ...tpConfig.configs.baseTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.json']
+      }
+    }
+  }
+]
 ```
 
 Requires `tsconfig.json` with `include` set.
-
-```json
-{
-  "languageOptions": {
-    "parserOptions": {
-      "project": true
-    }
-  }
-}
-```
 
 #### react
 
@@ -68,12 +88,6 @@ import tpConfig from '@tiagoporto/eslint-config'
 export default [...tpConfig.configs.react]
 ```
 
-Linted files
-
-All from base config
-
-- **JavaScript XML** - `.jsx` and `.tsx`
-
 #### react type-checked
 
 ```mjs
@@ -81,17 +95,16 @@ All from base config
 import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [...tpConfig.configs.reactTypeChecked]
-```
-
-```json
-{
-  "languageOptions": {
-    "parserOptions": {
-      "project": true
+export default [
+  ...tpConfig.configs.reactTypeChecked,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.json']
+      }
     }
   }
-}
+]
 ```
 
 #### NPM scripts
@@ -119,7 +132,7 @@ export default {
   ],
   '*.{html,yml,yaml,json,jsonc,json5}':
     'eslint --max-warnings 0 --no-warn-ignored',
-  '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}': [
+  '*.{js,mjs,cjs,jsx,ts,tsx}': [
     'eslint --max-warnings 0 --no-warn-ignored'
     // unit test
   ]
@@ -137,8 +150,6 @@ To avoid conflicts with Prettier, ignore the following files:
 **/*.cjs
 **/*.jsx
 **/*.ts
-**/*.mts
-**/*.cts
 **/*.tsx
 ```
 

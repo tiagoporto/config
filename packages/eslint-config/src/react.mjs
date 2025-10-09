@@ -1,6 +1,5 @@
 import eslintReact from '@eslint-react/eslint-plugin'
 import { importX } from 'eslint-plugin-import-x'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
 import reactHooks from 'eslint-plugin-react-hooks'
 import tseslint from 'typescript-eslint'
 
@@ -20,12 +19,10 @@ export const react = {
     ...tsConfig.plugins,
     ...importX.flatConfigs.react.plugins,
     ...eslintReact.configs['recommended-typescript'].plugins,
-    'jsx-a11y': jsxA11y,
     'react-hooks': reactHooks,
   },
   rules: {
     ...tsConfig.rules,
-    ...jsxA11y.flatConfigs.recommended.rules,
     ...reactHooks.configs.recommended.rules,
     'unicorn/filename-case': [
       'error',
