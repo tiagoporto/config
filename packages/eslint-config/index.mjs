@@ -7,7 +7,7 @@ import { htmlConfig } from './src/html.mjs'
 import { javascriptConfig } from './src/javascript.mjs'
 import { jsonConfig } from './src/json.mjs'
 import { markdownConfig } from './src/markdown.mjs'
-import { reactConfig } from './src/react.mjs'
+import { reactConfig, reactConfigTypeChecked } from './src/react.mjs'
 import {
   typescriptConfig,
   typescriptTypeCheckedConfig,
@@ -41,6 +41,10 @@ export default {
     base: [...base, ...typescriptConfig],
     baseTypeChecked: [...base, ...typescriptTypeCheckedConfig],
     react: [...base, ...typescriptConfig, ...reactConfig],
-    reactTypeChecked: [...base, ...typescriptTypeCheckedConfig, ...reactConfig],
+    reactTypeChecked: [
+      ...base,
+      ...typescriptTypeCheckedConfig,
+      ...reactConfigTypeChecked,
+    ],
   },
 }

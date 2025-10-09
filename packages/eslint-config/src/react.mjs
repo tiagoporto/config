@@ -1,53 +1,72 @@
+import eslintReact from '@eslint-react/eslint-plugin'
+import { importX } from 'eslint-plugin-import-x'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import reactHooks from 'eslint-plugin-react-hooks'
-import neostandard, { plugins } from 'neostandard'
+import tseslint from 'typescript-eslint'
 
 import { testRules } from './javascript.mjs'
 import { tsConfig } from './typescript.mjs'
 
-const neoConfig = neostandard({ noStyle: true, ts: true })
-const recommended = plugins['typescript-eslint'].configs.recommended
-const stylistic = plugins['typescript-eslint'].configs.stylistic
+export const react = {
+  settings: {
+    ...tsConfig.settings,
+    ...importX.flatConfigs.react.settings,
+  },
+  languageOptions: {
+    ...tsConfig.languageOptions,
+    ...importX.flatConfigs.react.languageOptions,
+  },
+  plugins: {
+    ...tsConfig.plugins,
+    ...importX.flatConfigs.react.plugins,
+    ...eslintReact.configs['recommended-typescript'].plugins,
+    'jsx-a11y': jsxA11y,
+    'react-hooks': reactHooks,
+  },
+  rules: {
+    ...tsConfig.rules,
+    ...jsxA11y.flatConfigs.recommended.rules,
+    ...reactHooks.configs.recommended.rules,
+    'unicorn/filename-case': [
+      'error',
+      {
+        case: 'pascalCase',
+      },
+    ],
+  },
+}
 
 /** @type {import('eslint').Linter.Config[]} */
 export const reactConfig = [
   {
     name: 'tp/react',
     files: ['**/*.{jsx,tsx}'],
-    languageOptions: {
-      ...tsConfig.languageOptions,
-      ...neoConfig[3].languageOptions,
-    },
-    plugins: {
-      ...tsConfig.plugins,
-      // react
-      ...neoConfig[3].plugins,
-      'jsx-a11y': jsxA11y,
-      'react-hooks': reactHooks,
-    },
-    settings: {
-      ...tsConfig.settings,
-      ...neoConfig[3].settings,
-    },
+    ...react,
     rules: {
-      // typescript-eslint/recommended
-      ...recommended[2].rules,
-      // typescript-eslint/stylistic
-      ...stylistic[2].rules,
-      ...tsConfig.rules,
-      ...plugins.react.configs.flat.recommended.rules,
-      ...plugins.react.configs.flat['jsx-runtime'].rules,
-      //neostandard/jsx
-      ...neoConfig[3].rules,
-      // jsx-a11y/recommended
-      ...jsxA11y.flatConfigs.recommended.rules,
-      ...reactHooks.configs.recommended.rules,
-      'unicorn/filename-case': [
-        'error',
-        {
-          case: 'pascalCase',
-        },
-      ],
+      ...react.rules,
+      ...eslintReact.configs['recommended-typescript'].rules,
+    },
+  },
+  {
+    name: 'tp/react-test',
+    files: ['**/*.{test,spec}.{jsx,tsx}'],
+    rules: {
+      ...testRules,
+    },
+  },
+]
+
+/** @type {import('eslint').Linter.Config[]} */
+export const reactConfigTypeChecked = [
+  {
+    name: 'tp/react',
+    files: ['**/*.{jsx,tsx}'],
+    ...react,
+    rules: {
+      ...react.rules,
+      ...tseslint.configs.recommendedTypeCheckedOnly[2].rules,
+      ...tseslint.configs.stylisticTypeCheckedOnly[2].rules,
+      ...eslintReact.configs['recommended-type-checked'].rules,
     },
   },
   {
