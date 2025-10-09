@@ -1,4 +1,13 @@
 import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [...tpConfig.configs.baseTypeChecked]
+export default [
+  ...tpConfig.configs.react,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: true,
+      },
+    },
+  },
+]

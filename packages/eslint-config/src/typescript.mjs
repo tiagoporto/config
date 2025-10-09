@@ -1,11 +1,8 @@
 import { importX } from 'eslint-plugin-import-x'
 import doc from 'eslint-plugin-jsdoc'
-import process from 'node:process'
 import tseslint from 'typescript-eslint'
 
 import { baseConfig, testRules } from './javascript.mjs'
-
-const currentPath = process.cwd()
 
 export const tsConfig = {
   languageOptions: {
@@ -14,18 +11,18 @@ export const tsConfig = {
   plugins: {
     ...baseConfig.plugins,
     ...tseslint.configs.base.plugins,
-    ...importX.configs['flat/typescript'].plugins,
+    ...importX.flatConfigs.typescript.plugins,
   },
   settings: {
     ...baseConfig.settings,
-    ...importX.configs['flat/typescript'].settings,
+    ...importX.flatConfigs.typescript.settings,
   },
   rules: {
     ...baseConfig.rules,
     ...tseslint.configs.eslintRecommended.rules,
     ...tseslint.configs.recommended[2].rules,
     ...tseslint.configs.stylistic[2].rules,
-    ...importX.configs['flat/typescript'].rules,
+    ...importX.flatConfigs.typescript.rules,
     ...doc.configs['flat/recommended-typescript'].rules,
   },
 }
@@ -57,10 +54,7 @@ export const typescriptTypeCheckedConfig = [
     ...tsConfig,
     languageOptions: {
       ...tsConfig.languageOptions,
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: currentPath,
-      },
+      ecmaVersion: 'latest',
     },
     rules: {
       ...tsConfig.rules,

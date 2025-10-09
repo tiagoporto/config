@@ -48,6 +48,16 @@ export default [...tpConfig.configs.baseTypeChecked]
 
 Requires `tsconfig.json` with `include` set.
 
+```json
+{
+  "languageOptions": {
+    "parserOptions": {
+      "project": true
+    }
+  }
+}
+```
+
 #### react
 
 ```mjs
@@ -72,6 +82,16 @@ import tpConfig from '@tiagoporto/eslint-config'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [...tpConfig.configs.reactTypeChecked]
+```
+
+```json
+{
+  "languageOptions": {
+    "parserOptions": {
+      "project": true
+    }
+  }
+}
 ```
 
 #### NPM scripts
