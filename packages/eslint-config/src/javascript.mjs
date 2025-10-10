@@ -106,6 +106,8 @@ export const baseConfig = {
     'jsdoc/require-jsdoc': ['off'],
 
     ...stylistic.configs.recommended.rules,
+    '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
+    '@stylistic/brace-style': ['error', '1tbs'],
     ...jsxA11y.flatConfigs.recommended.rules,
   },
 }
