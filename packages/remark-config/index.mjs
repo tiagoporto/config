@@ -24,16 +24,18 @@ const folderName = path.basename(currentPath)
 function getPackageJsonFiles(directory) {
   const files = fs.readdirSync(directory)
   const packageJsonFiles = []
+
   for (const file of files) {
     const filePath = path.join(directory, file)
     const stat = fs.statSync(filePath)
+
     if (stat.isDirectory() && file !== 'node_modules') {
       packageJsonFiles.push(...getPackageJsonFiles(filePath))
-    }
-    else if (file === 'package.json') {
+    } else if (file === 'package.json') {
       packageJsonFiles.push(filePath)
     }
   }
+
   return packageJsonFiles
 }
 
