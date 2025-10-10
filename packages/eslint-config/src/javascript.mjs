@@ -3,7 +3,7 @@ import comments from '@eslint-community/eslint-plugin-eslint-comments/configs'
 import stylistic from '@stylistic/eslint-plugin'
 import html from 'eslint-plugin-html'
 import { importX } from 'eslint-plugin-import-x'
-import doc from 'eslint-plugin-jsdoc'
+import jsdoc from 'eslint-plugin-jsdoc'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import nodePlugin from 'eslint-plugin-n'
 import promise from 'eslint-plugin-promise'
@@ -11,6 +11,14 @@ import unicorn from 'eslint-plugin-unicorn'
 import globals from 'globals'
 
 export const baseConfig = {
+  settings: {
+    'import-x/extensions': [
+      '.js',
+      '.mjs',
+      '.cjs',
+      '.jsx',
+    ],
+  },
   languageOptions: {
     parserOptions: { ecmaFeatures: { jsx: true } },
   },
@@ -19,7 +27,7 @@ export const baseConfig = {
     ...nodePlugin.configs['flat/recommended'].plugins,
     ...promise.configs['flat/recommended'].plugins,
     ...comments.recommended.plugins,
-    ...doc.configs['flat/recommended'].plugins,
+    ...jsdoc.configs['flat/recommended'].plugins,
     ...stylistic.configs.recommended.plugins,
     ...jsxA11y.flatConfigs.recommended.plugins,
     unicorn,
@@ -41,6 +49,7 @@ export const baseConfig = {
       },
     ],
     ...importX.flatConfigs.recommended.rules,
+    'import-x/no-named-as-default': 'off',
     'import-x/no-unresolved': 'off',
     'import-x/order': [
       'warn',
@@ -73,6 +82,7 @@ export const baseConfig = {
     ...promise.configs['flat/recommended'].rules,
 
     ...unicorn.configs.recommended.rules,
+    'unicorn/prefer-top-level-await': 'off',
     'unicorn/no-empty-file': 'off',
     'unicorn/no-abusive-eslint-disable': 'off',
     'unicorn/prevent-abbreviations': [
@@ -91,7 +101,7 @@ export const baseConfig = {
     ],
 
     ...comments.recommended.rules,
-    ...doc.configs['flat/recommended'].rules,
+    ...jsdoc.configs['flat/recommended'].rules,
     'jsdoc/require-jsdoc': ['off'],
 
     ...stylistic.configs.recommended.rules,

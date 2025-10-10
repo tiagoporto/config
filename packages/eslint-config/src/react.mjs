@@ -9,7 +9,6 @@ import { tsConfig } from './typescript.mjs'
 export const react = {
   settings: {
     ...tsConfig.settings,
-    ...importX.flatConfigs.react.settings,
   },
   languageOptions: {
     ...tsConfig.languageOptions,

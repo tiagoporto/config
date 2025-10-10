@@ -1,3 +1,4 @@
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import { importX } from 'eslint-plugin-import-x'
 import doc from 'eslint-plugin-jsdoc'
 import tseslint from 'typescript-eslint'
@@ -19,6 +20,11 @@ export const tsConfig = {
   settings: {
     ...baseConfig.settings,
     ...importX.flatConfigs.typescript.settings,
+    'import-x/resolver-next': [
+      createTypeScriptImportResolver({
+        alwaysTryTypes: true,
+      }),
+    ],
   },
   rules: {
     ...baseConfig.rules,
