@@ -31,8 +31,12 @@ export const tsConfig = {
     ...tseslint.configs.eslintRecommended.rules,
     ...tseslint.configs.recommended[2].rules,
     ...tseslint.configs.stylistic[2].rules,
+
     ...importX.flatConfigs.typescript.rules,
+
     ...doc.configs['flat/recommended-typescript'].rules,
+    'jsdoc/require-jsdoc': 'off',
+
   },
 }
 

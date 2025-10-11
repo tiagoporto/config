@@ -103,7 +103,8 @@ export const baseConfig = {
 
     ...comments.recommended.rules,
     ...jsdoc.configs['flat/recommended'].rules,
-    'jsdoc/require-jsdoc': ['off'],
+    // NOTE: changed rules needs to be added in ts
+    'jsdoc/require-jsdoc': 'off',
 
     ...stylistic.configs.recommended.rules,
     '@stylistic/jsx-one-expression-per-line': ['error', { allow: 'non-jsx' }],
