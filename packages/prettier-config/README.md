@@ -48,7 +48,6 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
 ```jsonc
 // .vscode/settings.json
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true
 }
 ```
