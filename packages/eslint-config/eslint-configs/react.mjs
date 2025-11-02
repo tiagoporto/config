@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint'
 import { testRules } from './javascript.mjs'
 import { tsBaseConfig } from './typescript.mjs'
 
-export const react = {
+const react = {
   settings: {
     ...tsBaseConfig.settings,
   },

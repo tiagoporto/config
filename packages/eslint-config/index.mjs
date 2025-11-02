@@ -1,8 +1,6 @@
-import { includeIgnoreFile } from '@eslint/compat'
-import childProcess from 'node:child_process'
 import fs from 'node:fs'
-import path from 'node:path'
 
+import { gitignoreConfig } from './eslint-configs/gitignore.mjs'
 import { htmlConfig } from './eslint-configs/html.mjs'
 import { javascriptConfig } from './eslint-configs/javascript.mjs'
 import { jsonConfig } from './eslint-configs/json.mjs'
@@ -14,17 +12,11 @@ import {
 } from './eslint-configs/typescript.mjs'
 import { ymlConfig } from './eslint-configs/yml.mjs'
 
-const processPath = childProcess
-  .execSync('git rev-parse --show-toplevel')
-  .toString()
-  .trim()
-
-const gitignorePath = path.resolve(processPath, '.gitignore')
 const jsonData = fs.readFileSync('./package.json', 'utf8')
 const { name, version } = JSON.parse(jsonData)
 
 const base = [
-  includeIgnoreFile(gitignorePath),
+  ...gitignoreConfig,
   ...htmlConfig,
   ...javascriptConfig,
   ...jsonConfig,
