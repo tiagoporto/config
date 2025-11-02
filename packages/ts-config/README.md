@@ -5,7 +5,7 @@ In `package.json` add the following scripts:
 ```json
 {
   "scripts": {
-    "typecheck": "tsc"
+    "typecheck": "tsc --project tsconfig.json"
   }
 }
 ```
