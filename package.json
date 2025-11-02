@@ -13,6 +13,7 @@
     "check-docs": "remark --frail . --ext md,markdown,mdx",
     "format:check": "prettier --check --ignore-unknown \"**/*\"",
     "format": "npm run format:check -- --write",
+    "typecheck": "tsc --project tsconfig.json",
     "lint": "eslint --max-warnings 0",
     "lint:fix": "npm run lint -- --write"
   },
