@@ -5,7 +5,7 @@ import tseslint from 'typescript-eslint'
 
 import { baseConfig, testRules } from './javascript.mjs'
 
-export const tsConfig = {
+export const tsBaseConfig = {
   languageOptions: {
     ...tseslint.configs.base.languageOptions,
     ...baseConfig.languageOptions,
@@ -45,9 +45,9 @@ export const typescriptConfig = [
   {
     name: 'tp/typescript',
     files: ['**/*.{ts,tsx}'],
-    ...tsConfig,
+    ...tsBaseConfig,
     rules: {
-      ...tsConfig.rules,
+      ...tsBaseConfig.rules,
     },
   },
   {
@@ -64,9 +64,9 @@ export const typescriptTypeCheckedConfig = [
   {
     name: 'tp/typescript-type-checked',
     files: ['**/*.{ts,tsx}'],
-    ...tsConfig,
+    ...tsBaseConfig,
     rules: {
-      ...tsConfig.rules,
+      ...tsBaseConfig.rules,
       ...tseslint.configs.recommendedTypeCheckedOnly[2].rules,
       ...tseslint.configs.stylisticTypeCheckedOnly[2].rules,
     },

@@ -4,24 +4,24 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import tseslint from 'typescript-eslint'
 
 import { testRules } from './javascript.mjs'
-import { tsConfig } from './typescript.mjs'
+import { tsBaseConfig } from './typescript.mjs'
 
 export const react = {
   settings: {
-    ...tsConfig.settings,
+    ...tsBaseConfig.settings,
   },
   languageOptions: {
-    ...tsConfig.languageOptions,
+    ...tsBaseConfig.languageOptions,
     ...importX.flatConfigs.react.languageOptions,
   },
   plugins: {
-    ...tsConfig.plugins,
+    ...tsBaseConfig.plugins,
     ...importX.flatConfigs.react.plugins,
     ...eslintReact.configs['recommended-typescript'].plugins,
     'react-hooks': reactHooks,
   },
   rules: {
-    ...tsConfig.rules,
+    ...tsBaseConfig.rules,
     ...reactHooks.configs.recommended.rules,
     'unicorn/filename-case': [
       'error',

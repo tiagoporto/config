@@ -19,10 +19,13 @@
     "node": ">=20"
   },
   "type": "module",
-  "exports": "./index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./*": "./eslint-configs/*.mjs"
+  },
   "license": "MIT",
   "files": [
-    "src/**",
+    "eslint-configs/**",
     "index.mjs"
   ],
   "dependencies": {

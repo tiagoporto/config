@@ -3,16 +3,16 @@ import childProcess from 'node:child_process'
 import fs from 'node:fs'
 import path from 'node:path'
 
-import { htmlConfig } from './src/html.mjs'
-import { javascriptConfig } from './src/javascript.mjs'
-import { jsonConfig } from './src/json.mjs'
-import { markdownConfig } from './src/markdown.mjs'
-import { reactConfig, reactConfigTypeChecked } from './src/react.mjs'
+import { htmlConfig } from './eslint-configs/html.mjs'
+import { javascriptConfig } from './eslint-configs/javascript.mjs'
+import { jsonConfig } from './eslint-configs/json.mjs'
+import { markdownConfig } from './eslint-configs/markdown.mjs'
+import { reactConfig, reactConfigTypeChecked } from './eslint-configs/react.mjs'
 import {
   typescriptConfig,
   typescriptTypeCheckedConfig,
-} from './src/typescript.mjs'
-import { ymlConfig } from './src/yml.mjs'
+} from './eslint-configs/typescript.mjs'
+import { ymlConfig } from './eslint-configs/yml.mjs'
 
 const processPath = childProcess
   .execSync('git rev-parse --show-toplevel')
