@@ -166,7 +166,7 @@ For [VSCode](https://code.visualstudio.com) is recommended the following extensi
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "eslint.probe": [
+  "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
