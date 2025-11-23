@@ -48,6 +48,7 @@ export const htmlConfig = [
     },
     rules: {
       ...eslintHtml.configs['flat/recommended'].rules,
+      '@html-eslint/indent': 'off',
     },
   },
 ]
