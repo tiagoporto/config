@@ -37,7 +37,7 @@ export const htmlConfig = [
       '@html-eslint/id-naming-convention': ['warn', 'kebab-case'],
       '@html-eslint/lowercase': 'error',
       '@html-eslint/no-extra-spacing-attrs': 'off',
-      '@html-eslint/indent': ['error', 2],
+      '@html-eslint/indent': 'off',
     },
   },
   {
@@ -48,7 +48,6 @@ export const htmlConfig = [
     },
     rules: {
       ...eslintHtml.configs['flat/recommended'].rules,
-      '@html-eslint/indent': 'off',
     },
   },
   {
