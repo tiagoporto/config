@@ -51,4 +51,12 @@ export const htmlConfig = [
       '@html-eslint/indent': 'off',
     },
   },
+  {
+    name: 'tp/html-in-md',
+    files: ['**/*.{md,markdown,mdx}/*.html'],
+    rules: {
+      '@html-eslint/require-meta-charset': 'off',
+      '@html-eslint/require-meta-viewport': 'off',
+    },
+  },
 ]
