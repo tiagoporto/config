@@ -142,6 +142,13 @@ export const javascriptConfig = [
       html,
       ...baseConfig.plugins,
     },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+      sourceType: 'module',
+      ecmaVersion: 'latest',
+    },
     rules: {
       ...baseConfig.rules,
       '@stylistic/spaced-comment': 'off',
