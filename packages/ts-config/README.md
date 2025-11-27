@@ -10,6 +10,27 @@ In `package.json` add the following scripts:
 }
 ```
 
+## TSConfig
+
+Base TypeScript configuration
+
+```jsonc
+// tsconfig.json
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "downlevelIteration": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
+```
+
 ## Lint-staged
 
 Check TypeScript files
