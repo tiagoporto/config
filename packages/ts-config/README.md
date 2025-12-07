@@ -31,15 +31,19 @@ Base TypeScript configuration
 }
 ```
 
-## Lint-staged
+## Lefthook
 
 Check TypeScript files
 
-```mjs
-// .lintstagedrc.mjs
-export default {
-  '*.{ts,tsx}': () => 'tsc --project tsconfig.json'
-}
+```yml
+# .lefthook.yml
+pre-commit:
+  parallel: true
+  commands:
+    typecheck:
+      glob: '*.{ts,tsx}'
+      # Whole project type check for global errors
+      run: pnpm exec tsc --project tsconfig.json
 ```
 
 ## Editor
