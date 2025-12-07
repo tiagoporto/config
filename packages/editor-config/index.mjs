@@ -18,18 +18,19 @@ if (source === destination) {
   exit()
 }
 
-if (fs.existsSync(destination)) {
-  fs.unlinkSync(destination)
-
-  console.warn(
-    `\u001B[0;33m[${pkg.name}] Deleted existing ${fileName}\u001B[0m`,
-  )
-}
-
 const data = fs.readFileSync(source)
 
-fs.writeFileSync(destination, data, { mode: 0o444 })
+try {
+  const fd = fs.openSync(destination, fs.constants.O_CREAT | fs.constants.O_EXCL | fs.constants.O_RDWR, 0o600)
+  fs.writeFileSync(fd, data)
+  fs.closeSync(fd)
 
-console.info(`\u001B[0;32m[${pkg.name}] Created ${fileName}\u001B[0m`)
+  console.info(`\u001B[0;32m[${pkg.name}] Created ${fileName}\u001B[0m`)
+} catch {
+  fs.writeFileSync(destination, data)
 
+  console.warn(
+    `\u001B[0;33m[${pkg.name}] Overwrite existing ${fileName}\u001B[0m`,
+  )
+}
 console.info(`\r`)
