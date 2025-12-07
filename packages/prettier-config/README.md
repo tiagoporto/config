@@ -28,15 +28,19 @@ In `package.json` add the following scripts:
 }
 ```
 
-## Lint-staged
+## Lefthook
 
 Check staged files
 
-```mjs
-// .lintstagedrc.mjs
-export default {
-  '*': 'prettier --check --ignore-unknown --write'
-}
+```yml
+# .lefthook.yml
+pre-commit:
+  parallel: true
+  commands:
+    format:
+      glob: '*'
+      run: pnpm exec prettier  --write --ignore-unknown {staged_files}
+      stage_fixed: true
 ```
 
 ## Editor
