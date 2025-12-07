@@ -119,24 +119,26 @@ export default [
 }
 ```
 
-## Lint-staged
+## Lefthook
 
 Check staged files
 
-```mjs
-// .lintstagedrc.mjs
-export default {
-  '*.{md,markdown,mdx}': [
-    // remark,
-    'eslint --max-warnings 0 --no-warn-ignored'
-  ],
-  '*.{html,yml,yaml,json,jsonc,json5}':
-    'eslint --max-warnings 0 --no-warn-ignored',
-  '*.{js,mjs,cjs,jsx,ts,tsx}': [
-    'eslint --max-warnings 0 --no-warn-ignored'
-    // unit test
-  ]
-}
+```yml
+# .lefthook.yml
+pre-commit:
+  parallel: true
+  commands:
+    markdown-lint:
+      glob: '*.{md,markdown,mdx}'
+      run: pnpm exec eslint --max-warnings 0 --no-warn-ignored {staged_files}
+
+    html-yml-json-lint:
+      glob: '*.{html,yml,yaml,json,jsonc,json5}'
+      run: pnpm exec eslint --max-warnings 0 --no-warn-ignored {staged_files}
+
+    js-ts-eslint:
+      glob: '*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}'
+      run: pnpm exec eslint --max-warnings 0 --no-warn-ignored {staged_files}
 ```
 
 ## Prettier
