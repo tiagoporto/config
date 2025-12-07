@@ -52,15 +52,18 @@ In `package.json` add the following scripts:
 }
 ```
 
-## Lint-staged
+## Lefthook
 
 Check staged markdown
 
-```mjs
-// .lintstagedrc.mjs
-export default {
-  '*.{md,markdown,mdx}': 'remark --frail'
-}
+```yml
+# .lefthook.yml
+pre-commit:
+  parallel: true
+  commands:
+    doc-lint:
+      glob: '*.{md,markdown,mdx}'
+      run: pnpm exec remark --frail {staged_files}
 ```
 
 ## Editor
