@@ -28,15 +28,18 @@ In `package.json` add the following scripts:
 }
 ```
 
-## Lint-staged
+## Lefthook
 
 Check staged markdown
 
-```mjs
-// .lintstagedrc.mjs
-export default {
-  '*.{css,scss}': 'stylelint --fix'
-}
+```yml
+# .lefthook.yml
+pre-commit:
+  parallel: true
+  commands:
+    styles-lint:
+      glob: '*.{css,scss}'
+      run: pnpm exec stylelint {staged_files}
 ```
 
 ## Editor
