@@ -11,5 +11,11 @@ export default {
         trailingComma: 'none',
       },
     },
+    {
+      files: 'CITATION.cff',
+      options: {
+        singleQuote: false,
+      },
+    },
   ],
 }
