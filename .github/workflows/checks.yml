@@ -21,8 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # minimum version 20
-        node-version: [lts/iron, lts/*]
+        node-version: [lts/jod, lts/*, latest]
 
     steps:
       - name: Checkout
