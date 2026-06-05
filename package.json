@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@anolilab/multi-semantic-release": "^4.4.4",
-    "@commitlint/cli": "^20.2.0",
-    "@commitlint/config-conventional": "^20.2.0",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
     "@tiagoporto/dependabot-config": "^1.0.0",
     "@tiagoporto/editor-config": "^1.0.0",
     "@tiagoporto/eslint-config": "^1.0.0",
@@ -44,8 +44,5 @@
     "remark": "^15.0.1",
     "remark-cli": "^12.0.1",
     "semantic-release": "^25.0.3"
-  },
-  "overrides": {
-    "conventional-changelog-conventionalcommits": ">=9.0.0"
   }
 }
