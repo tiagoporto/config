@@ -15,7 +15,6 @@
       "onFail": "error"
     }
   },
-  "packageManager": "npm@11.6.2",
   "workspaces": [
     "packages/*"
   ],
