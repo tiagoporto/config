@@ -7,12 +7,12 @@
     "runtime": {
       "name": "node",
       "version": ">=24",
-      "onFail": "error"
+      "onFail": "warn"
     },
     "packageManager": {
       "name": "npm",
       "version": ">=11.6.2",
-      "onFail": "error"
+      "onFail": "warn"
     }
   },
   "workspaces": [
