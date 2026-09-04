@@ -18,17 +18,33 @@ const react = {
     ...tsBaseConfig.plugins,
     ...importX.flatConfigs.react.plugins,
     ...eslintReact.configs['recommended-typescript'].plugins,
-    'react-hooks': reactHooks,
   },
   rules: {
     ...tsBaseConfig.rules,
-    ...reactHooks.configs.recommended.rules,
     'unicorn/filename-case': [
       'error',
       {
         case: 'pascalCase',
       },
     ],
+  },
+}
+
+const reactHookConfig = {
+  name: 'tp/react-hook',
+  files: ['**/*.{js,jsx,ts,tsx}'],
+  plugins: {
+    ...reactHooks.configs.flat.recommended.plugins,
+  },
+  rules: {
+    ...reactHooks.configs.flat.recommended.rules,
+  },
+}
+const reactTestConfig = {
+  name: 'tp/react-test',
+  files: ['**/*.{test,spec}.{jsx,tsx}'],
+  rules: {
+    ...testRules,
   },
 }
 
@@ -43,13 +59,8 @@ export const reactConfig = [
       ...eslintReact.configs['recommended-typescript'].rules,
     },
   },
-  {
-    name: 'tp/react-test',
-    files: ['**/*.{test,spec}.{jsx,tsx}'],
-    rules: {
-      ...testRules,
-    },
-  },
+  reactHookConfig,
+  reactTestConfig,
 ]
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -65,11 +76,6 @@ export const reactConfigTypeChecked = [
       ...eslintReact.configs['recommended-type-checked'].rules,
     },
   },
-  {
-    name: 'tp/react-test',
-    files: ['**/*.{test,spec}.{jsx,tsx}'],
-    rules: {
-      ...testRules,
-    },
-  },
+  reactHookConfig,
+  reactTestConfig,
 ]
